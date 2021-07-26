@@ -24,8 +24,8 @@ let userCat = [{ // <-- using this as an example, but it should be read from use
     
 }];
 
-let userRate = 30;
-let userHours= 50; 
+let userRate = 20;
+let userHours= 20; 
 // defining the variables to be returned:
 
 let totalIncome = 0; //total of (totalHours x userRate ) + (maxPayment - deductions) 
@@ -35,11 +35,21 @@ let deductions = 0;
 let workIncomeTotal = userRate * userHours;
 
 // 300  (106 * limit1) ( 150-256)
-let threshold1 = 0// how much money he made between 150 to 256
-let threshold2 = 0// between 256 to max
+let threshold1 =  (workIncomeTotal - 150) * 0.5;// how much money he made between 150 to 256
+let threshold2 = 0;// between 256 to max
 
 if (workIncomeTotal > userCat[0].incomeLimit){ //<-- if total income higher than limit
-    deductions= userCat[0].maxPayment;
+    deductions = userCat[0].maxPayment;
+} else if(workIncomeTotal < userCat[0].incomeLimit){
+    if(workIncomeTotal < 150 ){
+        deductions = 0;
+    } else if(workIncomeTotal > 150 && workIncomeTotal < 256){
+        deductions = threshold1;
+    } else if(workIncomeTotal > 256 && workIncomeTotal < userCat[0].incomeLimit){
+        //console.log("256 to limit");
+        threshold2 = ((workIncomeTotal- 150) - 106) * 0.6;
+        deductions = (workIncomeTotal - 150) - 53 - threshold2;
+    }
 };
 
 totalIncome = workIncomeTotal + userCat[0].maxPayment - deductions;
