@@ -24,7 +24,7 @@ let userCat = [{ // <-- using this as an example, but it should be read from use
     
 }];
 
-let userRate = 20;
+let userRate = 50;
 let userHours= 20; 
 // defining the variables to be returned:
 
@@ -35,7 +35,7 @@ let deductions = 0;
 let workIncomeTotal = userRate * userHours;
 
 // 300  (106 * limit1) ( 150-256)
-let threshold1 =  (workIncomeTotal - 150) * 0.5;// how much money he made between 150 to 256
+let threshold1 =  ((workIncomeTotal - 150) * 0.5).toFixed(2);// how much money he made between 150 to 256
 let threshold2 = 0;// between 256 to max
 
 if (workIncomeTotal > userCat[0].incomeLimit){ //<-- if total income higher than limit
@@ -43,16 +43,16 @@ if (workIncomeTotal > userCat[0].incomeLimit){ //<-- if total income higher than
 } else if(workIncomeTotal < userCat[0].incomeLimit){
     if(workIncomeTotal < 150 ){
         deductions = 0;
-    } else if(workIncomeTotal > 150 && workIncomeTotal < 256){
+    } else if(workIncomeTotal > 150 && workIncomeTotal < 256){  // deduction from 105 to 256
         deductions = threshold1;
-    } else if(workIncomeTotal > 256 && workIncomeTotal < userCat[0].incomeLimit){
+    } else if(workIncomeTotal > 256 && workIncomeTotal < userCat[0].incomeLimit){  // deduction from 256 to incomeLimit
         //console.log("256 to limit");
-        threshold2 = ((workIncomeTotal- 150) - 106) * 0.6;
+        threshold2 = (((workIncomeTotal- 150) - 106) * 0.6).toFixed(2);
         deductions = (workIncomeTotal - 150) - 53 - threshold2;
     }
 };
 
-totalIncome = workIncomeTotal + userCat[0].maxPayment - deductions;
+totalIncome = (workIncomeTotal + userCat[0].maxPayment - deductions).toFixed(2);
 console.log(`User worked ${workIncomeTotal} , was elegible for ${userCat[0].maxPayment} but got deducted ${deductions} `);
 console.log(totalIncome);
 }
