@@ -1,47 +1,54 @@
-
 // we should do all the calculations by week, then if timePeriod changes, we mutiply
 // this function should take:, userCategories, userRate, userHours, and a default partnerIncome
-import {userCategories} from "./govTables.js";
+import { userCategories } from "./govTables.js";
 import Result from "./Result.js";
-import {resultDisplay} from "../App.js";
+import { resultDisplay } from "../App.js";
 
-export const incomeCalc = (userRate,userHours, userCategories) => {
+export const incomeCalc = (userRate, userHours, userCategories) => {
+  // variables to be returned:
+  let workIncomeTotal = userRate * userHours;
+  let deductions = 0;
 
-// variables to be returned:
-let workIncomeTotal = userRate * userHours;
-let deductions = 0;
+  let threshold1 = (
+    (workIncomeTotal - 150) *
+    userCategories.bracketOne
+  ).toFixed(2); // how much money he made between 150 to 256
+  let threshold2 = 0; // between 256 to max
 
-let threshold1 =  ((workIncomeTotal - 150) * userCategories.bracketOne).toFixed(2);// how much money he made between 150 to 256
-let threshold2 = 0;// between 256 to max
-
-if (workIncomeTotal > userCategories.incomeLimit){ //<-- if total income higher than limit
+  if (workIncomeTotal > userCategories.incomeLimit) {
+    //<-- if total income higher than limit
     deductions = userCategories.maxPayment;
-} else if(workIncomeTotal < userCategories.incomeLimit){
-    if(workIncomeTotal < 150 ){
-        deductions = 0;
-    } else if(workIncomeTotal > 150 && workIncomeTotal < 257){  // deduction from 150 to 256
-        deductions = threshold1;
-    } else if(workIncomeTotal > 256 && workIncomeTotal < userCategories.incomeLimit){  // deduction from 256 to incomeLimit
-        //console.log("256 to limit");
-        threshold2 = (((workIncomeTotal- 150) - 106) * userCategories.bracketTwo).toFixed(2);
-        deductions = (workIncomeTotal - 150) - (106 * userCategories.bracketOne) - threshold2;
+  } else if (workIncomeTotal < userCategories.incomeLimit) {
+    if (workIncomeTotal < 150) {
+      deductions = 0;
+    } else if (workIncomeTotal > 150 && workIncomeTotal < 257) {
+      // deduction from 150 to 256
+      deductions = threshold1;
+    } else if (
+      workIncomeTotal > 256 &&
+      workIncomeTotal < userCategories.incomeLimit
+    ) {
+      // deduction from 256 to incomeLimit
+      //console.log("256 to limit");
+      threshold2 = (
+        (workIncomeTotal - 150 - 106) *
+        userCategories.bracketTwo
+      ).toFixed(2);
+      deductions =
+        workIncomeTotal - 150 - 106 * userCategories.bracketOne - threshold2;
     }
-};
-let totalIncome = parseFloat((workIncomeTotal + userCategories.maxPayment - deductions).toFixed(2));
-deductions = parseFloat(deductions);
+  }
+  let totalIncome = parseFloat(
+    (workIncomeTotal + userCategories.maxPayment - deductions).toFixed(2)
+  );
+  deductions = parseFloat(deductions);
 
-let calculatedDisplay = {
+  let calculatedDisplay = {
     totalIncome,
     workIncomeTotal,
     deductions,
     maxGovPayment: userCategories.maxPayment,
-}
+  };
 
-console.log(calculatedDisplay);
-return(resultDisplay(calculatedDisplay));
-
-} 
-
-// let catSelected = 0;
-// let result = incomeCalc(50,4,userCategoriesegories[catSelected]);
-// console.log(result);
+  return calculatedDisplay;
+};

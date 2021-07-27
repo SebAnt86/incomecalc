@@ -1,20 +1,15 @@
-import React, {useState} from 'react';
-import Form from './components/Form';
-import Result from './components/Result';
- 
-let resultObject = {}
- export const resultDisplay = (result) => {
-   resultObject=result;
-   console.log("inside function in app : ");
-      }
+import React, { useState } from "react";
+import Form from "./components/Form";
+import Result from "./components/Result";
+
 function App() {
-  
+  const [result, setResult] = useState({});
   return (
     <div className="App">
       <h1> INCOME CALC</h1>
-      <Form />
+      <Form setResult={setResult} />
       <h5> result </h5>
-      <Result result = {resultObject}/> 
+      <Result result={result} />
     </div>
   );
 }
