@@ -8,7 +8,7 @@ export const userCategories = [
         maxPayment : 620.80,
         incomeLimit: 1217.00,
         bracketOne : .50,  
-        bracketTwo : .60,
+        bracketTwo : .60, // 1000 600 deduce
     },
       {
         catID: "S2",
@@ -32,7 +32,7 @@ export const userCategories = [
         maxPayment : 667.50,
         incomeLimit: 1858.00,
         bracketOne : .40,  
-        bracketTwo : .40,
+        bracketTwo : .40, // 1000 400 deduced 
     },
     {
         catID: "S5",

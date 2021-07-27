@@ -3,10 +3,11 @@
 
 export const incomeCalc = (userRate, userHours =1, userCategories) => {
   // variables to be returned:
-  let workIncomeTotal = userRate * userHours;
+  console.log(userCategories.bracketTwo);
+  let workIncomeTotal = Math.round(userRate * userHours);
   let deductions = 0;
-
-  let threshold1 = ((workIncomeTotal - 150) * userCategories.bracketOne).toFixed(2); // how much money he made between 150 to 256
+// 1150 .60  --> 1000 * .60 = 600
+  let threshold1 = 0; // how much money he made between 150 to 256
   let threshold2 = 0; // between 256 to max
 
   if (workIncomeTotal > userCategories.incomeLimit) {
@@ -18,14 +19,17 @@ export const incomeCalc = (userRate, userHours =1, userCategories) => {
       deductions = 0;
     } else if (workIncomeTotal > 150 && workIncomeTotal < 257) {
       // deduction from 150 to 256
+      threshold1 = ((workIncomeTotal - 150) * userCategories.bracketOne); // how much money he made between 150 to 256
       deductions = threshold1;
     } else if (workIncomeTotal > 256 && workIncomeTotal < userCategories.incomeLimit) {
       // deduction from 256 to incomeLimit
-      threshold2 = ((workIncomeTotal - 150 - 106) * userCategories.bracketTwo).toFixed(2);
-      deductions = ((workIncomeTotal - 150) - (106 * userCategories.bracketOne) - threshold2).toFixed(2);
+      threshold2 = ((workIncomeTotal - 150 - 106) * userCategories.bracketTwo);
+      console.log("threshold1:" + threshold1);
+      console.log("threshold2:" + threshold2);
+      deductions = Math.round((workIncomeTotal - 150) - ((106 * userCategories.bracketOne) + threshold2));
     }
   }
-  let totalIncome = (workIncomeTotal + userCategories.maxPayment - deductions).toFixed(2);
+  let totalIncome = (workIncomeTotal + userCategories.maxPayment - deductions);
       
   let averageWage = Math.round(totalIncome/userHours);
   
@@ -34,7 +38,7 @@ export const incomeCalc = (userRate, userHours =1, userCategories) => {
     totalIncome,
     workIncomeTotal,
     deductions,
-    maxGovPayment: (userCategories.maxPayment).toFixed(2),
+    maxGovPayment: (userCategories.maxPayment),
     averageWage,
     workHours : userHours,
   };
