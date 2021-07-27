@@ -15,7 +15,7 @@ function Result(props) {
         <p> Final Gov payment received:  {result.maxGovPayment - result.deductions} </p>
         <p> Total income  is {result.totalIncome} </p>
      
-        {/* <p> Your average wage after deduction is  {result.averageWage} </p> */}
+        <p> Your average wage after deduction is  {result.averageWage} </p>
       </div>
     </div>
   );

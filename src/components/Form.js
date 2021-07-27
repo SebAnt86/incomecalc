@@ -17,9 +17,9 @@ export function Form(props) {
       userCategories[userCategory]
     );
     setResult(finalCalc);
-    setHoursWorked(0);
-    setHourRate(0);
-    setUserCategory(0);
+    // setHoursWorked(0);
+    // setHourRate(0);
+    // setUserCategory(0);
   };
   return (
     <form onSubmit={handleSubmit}>
