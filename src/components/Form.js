@@ -1,5 +1,8 @@
 import React from 'react';
 import { useState } from "react";
+import { incomeCalc } from './incomeCalc';
+import {userCategories} from "./govTables.js";
+
 
 export function Form(props) {
     const [hoursWorked, setHoursWorked] = useState(0);
@@ -8,7 +11,11 @@ export function Form(props) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        alert(`Submitting ${hoursWorked} and ${hourRate} and ${userCategory}`)
+        //alert(`Submitting ${hoursWorked} and ${hourRate} and ${userCategory}`)
+        incomeCalc(hourRate, hoursWorked, userCategories[userCategory]);
+        setHoursWorked(0);
+        setHourRate(0);
+        setUserCategory("");
     }
     return (
         <form onSubmit={handleSubmit}>
