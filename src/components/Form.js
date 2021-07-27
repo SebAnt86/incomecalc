@@ -7,15 +7,15 @@ import {userCategories} from "./govTables.js";
 export function Form(props) {
     const [hoursWorked, setHoursWorked] = useState(0);
     const [hourRate, setHourRate] = useState(0);
-    const [userCategory, setUserCategory] = useState("");
+    const [userCategory, setUserCategory] = useState(0);
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        //alert(`Submitting ${hoursWorked} and ${hourRate} and ${userCategory}`)
+        alert(`Submitting ${hoursWorked} and ${hourRate} and ${userCategory}`);
         incomeCalc(hourRate, hoursWorked, userCategories[userCategory]);
         setHoursWorked(0);
         setHourRate(0);
-        setUserCategory("");
+        setUserCategory(0);
     }
     return (
         <form onSubmit={handleSubmit}>
@@ -38,9 +38,9 @@ export function Form(props) {
             </label>
 
             <label> User Category:
-            <select onChange={e => setUserCategory(Number(e.target.value))} value={userCategory}>
+            <select onChange={e => setUserCategory(Number(e.target.value))}>
                 {/* <option>Please select a category</option> */}
-                <option value={userCategory}>Single, no children</option>
+                <option value="0">Single, no children</option>
                 <option value="1" >Single,  NOT the principal carer of a dependent child or children</option>
                 <option value="2" >Single, 60 or older, after 9 continuous months on payment</option>
                 <option value="3" >Single,  principal carer of a dependent child or children</option>

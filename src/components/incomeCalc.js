@@ -2,6 +2,8 @@
 // we should do all the calculations by week, then if timePeriod changes, we mutiply
 // this function should take:, userCategories, userRate, userHours, and a default partnerIncome
 import {userCategories} from "./govTables.js";
+import Result from "./Result.js";
+import {resultDisplay} from "../App.js";
 
 export const incomeCalc = (userRate,userHours, userCategories) => {
 
@@ -36,7 +38,7 @@ let calculatedDisplay = {
 }
 
 console.log(calculatedDisplay);
-return(calculatedDisplay);
+return(resultDisplay(calculatedDisplay));
 
 } 
 
