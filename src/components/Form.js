@@ -18,12 +18,24 @@ export function Form(props) {
     );
     setResult(finalCalc);
     
+    
      // reset the form 
     // setHoursWorked("");
     // setHourRate("");
     // setUserCategory("");
     // document.getElementById("userForm").reset();
   };
+  function ShowHideDiv(){
+    const hiddenField = document.getElementById("hiddenInput");
+    const selectField = document.getElementById("selectField");
+    if(selectField.value === "5" || selectField.value === "6"){
+      hiddenField.style.display = "block";
+    }
+    else{
+      hiddenField.style.display = "none";
+    }
+   // hiddenField.style.display = selectField.value === "5" ? "block" : "none";
+  }
   return (
     <form onSubmit={handleSubmit} id="userForm">
       <div>
@@ -53,11 +65,22 @@ export function Form(props) {
           />
           <br />
         </label>
+        <div id="hiddenInput" style={{display: "none"}}>
+        <label >
+          
+          Partners Income:
+          <input
+            type="number"
+          />
+          <br />
+        </label>
+        </div>
+        
 
         <label>
           
           User Category:
-          <select onChange={(e) => setUserCategory(Number(e.target.value))}>
+          <select id = "selectField" onChange={(e) => {setUserCategory(Number(e.target.value)); ShowHideDiv();}}>
             <option>Please select a category</option>
             <option value="0">Single, no children</option>
             <option value="1">
