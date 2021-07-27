@@ -3,15 +3,12 @@
 // this function should take:, userCat, userRate, userHours, and a default partnerIncome
 import {userCategories} from "./govTables.js";
 
-function incomeCalc(userRate,userHours, userCat) {
+const incomeCalc = (userRate,userHours, userCat) => {
 
 // variables to be returned:
 let workIncomeTotal = userRate * userHours;
-
 let deductions = 0;
 
-
-// 300  (106 * limit1) ( 150-256)
 let threshold1 =  ((workIncomeTotal - 150) * userCat.bracketOne).toFixed(2);// how much money he made between 150 to 256
 let threshold2 = 0;// between 256 to max
 
@@ -28,11 +25,23 @@ if (workIncomeTotal > userCat.incomeLimit){ //<-- if total income higher than li
         deductions = (workIncomeTotal - 150) - (106 * userCat.bracketOne) - threshold2;
     }
 };
+let totalIncome = parseFloat((workIncomeTotal + userCat.maxPayment - deductions).toFixed(2));
+deductions = parseFloat(deductions);
 
-let totalIncome = (workIncomeTotal + userCat.maxPayment - deductions).toFixed(2);
-console.log(`User worked ${workIncomeTotal} , was elegible for ${userCat.maxPayment} but got deducted ${deductions} `);
-console.log(totalIncome);
+let calculatedDisplay = {
+    totalIncome,
+    workIncomeTotal,
+    deductions,
+    maxGovPayment: userCat.maxPayment,
 }
 
+// console.log(`User worked ${workIncomeTotal} , was elegible for ${userCat.maxPayment} but got deducted ${deductions} `);
+// console.log(totalIncome);
+
+return(calculatedDisplay)
+
+} 
+
 let catSelected = 0;
-incomeCalc(50,3,userCategories[catSelected]);
+let result = incomeCalc(50,4,userCategories[catSelected]);
+console.log(result);
