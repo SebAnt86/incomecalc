@@ -24,9 +24,7 @@ export const incomeCalc = (userRate, userHours =1, userCategories) => {
       // deduction from 256 to incomeLimit
       threshold2 = ((workIncomeTotal - 150 - 106) * userCategories.bracketTwo);
     
-      console.log("threshold2:" + threshold2);
-                        // .60 // 1080 - 150 = (930 - 557 ) ((63)+494)  ==    
-                        // .40 // 1080 - 150 = (930 - 371 ) ((42)+329) == 
+
       deductions = Math.round((106 * userCategories.bracketOne) + threshold2);
     }
   }
