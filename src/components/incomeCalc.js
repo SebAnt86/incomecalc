@@ -23,9 +23,11 @@ export const incomeCalc = (userRate, userHours =1, userCategories) => {
     } else if (workIncomeTotal > 256 && workIncomeTotal < userCategories.incomeLimit) {
       // deduction from 256 to incomeLimit
       threshold2 = ((workIncomeTotal - 150 - 106) * userCategories.bracketTwo);
-      console.log("threshold1:" + threshold1);
+    
       console.log("threshold2:" + threshold2);
-      deductions = Math.round((workIncomeTotal - 150) - ((106 * userCategories.bracketOne) + threshold2));
+                        // .60 // 1080 - 150 = (930 - 557 ) ((63)+494)  ==    
+                        // .40 // 1080 - 150 = (930 - 371 ) ((42)+329) == 
+      deductions = Math.round((106 * userCategories.bracketOne) + threshold2);
     }
   }
   let totalIncome = (workIncomeTotal + userCategories.maxPayment - deductions);

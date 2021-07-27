@@ -19,10 +19,10 @@ export function Form(props) {
     setResult(finalCalc);
     
      // reset the form 
-    setHoursWorked("");
-    setHourRate("");
-    setUserCategory("");
-    document.getElementById("userForm").reset();
+    // setHoursWorked("");
+    // setHourRate("");
+    // setUserCategory("");
+    // document.getElementById("userForm").reset();
   };
   return (
     <form onSubmit={handleSubmit} id="userForm">
