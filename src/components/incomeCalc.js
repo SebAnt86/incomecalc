@@ -1,10 +1,7 @@
 // we should do all the calculations by week, then if timePeriod changes, we mutiply
 // this function should take:, userCategories, userRate, userHours, and a default partnerIncome
-import { userCategories } from "./govTables.js";
-import Result from "./Result.js";
-import { resultDisplay } from "../App.js";
 
-export const incomeCalc = (userRate, userHours, userCategories) => {
+export const incomeCalc = (userRate, userHours =1, userCategories) => {
   // variables to be returned:
   let workIncomeTotal = userRate * userHours;
   let deductions = 0;
@@ -39,8 +36,9 @@ export const incomeCalc = (userRate, userHours, userCategories) => {
     }
   }
   let totalIncome = parseFloat(
-    (workIncomeTotal + userCategories.maxPayment - deductions).toFixed(2)
-  );
+    (workIncomeTotal + userCategories.maxPayment - deductions).toFixed(2));
+      
+  let averageWage = Math.round(totalIncome/userHours);
   deductions = parseFloat(deductions);
 
   let calculatedDisplay = {
@@ -48,6 +46,7 @@ export const incomeCalc = (userRate, userHours, userCategories) => {
     workIncomeTotal,
     deductions,
     maxGovPayment: userCategories.maxPayment,
+    averageWage,
   };
 
   return calculatedDisplay;

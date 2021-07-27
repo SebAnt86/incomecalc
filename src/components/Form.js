@@ -26,31 +26,31 @@ export function Form(props) {
       <div>
         <h3> USER INPUT </h3>
         <label>
-          {" "}
+          
           Hours Worked:
           <input
             type="number"
             value={hoursWorked}
             onChange={(e) => setHoursWorked(e.target.value)}
             required
-          />{" "}
+          />
           <br />
         </label>
 
         <label>
-          {" "}
+          
           Hourly Rate:
           <input
             type="number"
             value={hourRate}
             onChange={(e) => setHourRate(e.target.value)}
             required
-          />{" "}
+          />
           <br />
         </label>
 
         <label>
-          {" "}
+          
           User Category:
           <select onChange={(e) => setUserCategory(Number(e.target.value))}>
             {/* <option>Please select a category</option> */}
