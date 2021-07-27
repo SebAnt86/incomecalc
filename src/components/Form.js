@@ -38,12 +38,19 @@ export function Form(props) {
             </label>
 
             <label> User Category:
-            <input 
-            type="text"
-            value={userCategory}
-            onChange={e => setUserCategory(e.target.value)} 
-            required />
+            <select onChange={e => setUserCategory(Number(e.target.value))} value={userCategory}>
+                {/* <option>Please select a category</option> */}
+                <option value={userCategory}>Single, no children</option>
+                <option value="1" >Single,  NOT the principal carer of a dependent child or children</option>
+                <option value="2" >Single, 60 or older, after 9 continuous months on payment</option>
+                <option value="3" >Single,  principal carer of a dependent child or children</option>
+                <option value="4" >Single principal carer granted an exemption</option>
+                <option value="5" >Partnered</option>
+                <option value="6" >Partnered, Partner with pension</option>
+            </select>
             </label>
+            
+           
 
             <input type="submit" value="Submit" />
         </div>
