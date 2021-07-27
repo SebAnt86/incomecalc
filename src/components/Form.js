@@ -32,6 +32,7 @@ export function Form(props) {
             type="number"
             value={hoursWorked}
             onChange={(e) => setHoursWorked(e.target.value)}
+            placeholder="ex. 20"
             required
           />
           <br />
