@@ -3,11 +3,10 @@
 
 export const incomeCalc = (userRate, userHours =1, userCategories) => {
   // variables to be returned:
-  console.log(userCategories.bracketTwo);
-  let workIncomeTotal = Math.round(userRate * userHours);
+  let workIncomeTotal = Number(userRate * userHours);
   let deductions = 0;
-// 1150 .60  --> 1000 * .60 = 600
-  let threshold1 = 0; // how much money he made between 150 to 256
+
+  let threshold1 = Number(((workIncomeTotal - 150) * userCategories.bracketOne).toFixed(2)); // how much money he made between 150 to 256
   let threshold2 = 0; // between 256 to max
 
   if (workIncomeTotal > userCategories.incomeLimit) {
@@ -43,6 +42,5 @@ export const incomeCalc = (userRate, userHours =1, userCategories) => {
     workHours : userHours,
   };
 
-  console.log(calculatedDisplay.deductions);
   return calculatedDisplay;
 };

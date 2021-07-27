@@ -5,9 +5,9 @@ import { userCategories } from "./govTables.js";
 
 export function Form(props) {
   const { setResult } = props;
-  const [hoursWorked, setHoursWorked] = useState(0);
-  const [hourRate, setHourRate] = useState(0);
-  const [userCategory, setUserCategory] = useState(0);
+  const [hoursWorked, setHoursWorked] = useState("");
+  const [hourRate, setHourRate] = useState("");
+  const [userCategory, setUserCategory] = useState("");
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -17,12 +17,15 @@ export function Form(props) {
       userCategories[userCategory]
     );
     setResult(finalCalc);
-    // setHoursWorked(0);
-    // setHourRate(0);
-    // setUserCategory(0);
+    
+     // reset the form 
+    setHoursWorked("");
+    setHourRate("");
+    setUserCategory("");
+    document.getElementById("userForm").reset();
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="userForm">
       <div>
         <h3> USER INPUT </h3>
         <label>
@@ -45,6 +48,7 @@ export function Form(props) {
             type="number"
             value={hourRate}
             onChange={(e) => setHourRate(e.target.value)}
+            placeholder="ex. 20"
             required
           />
           <br />
@@ -54,7 +58,7 @@ export function Form(props) {
           
           User Category:
           <select onChange={(e) => setUserCategory(Number(e.target.value))}>
-            {/* <option>Please select a category</option> */}
+            <option>Please select a category</option>
             <option value="0">Single, no children</option>
             <option value="1">
               Single, NOT the principal carer of a dependent child or children
