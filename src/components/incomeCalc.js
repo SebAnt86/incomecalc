@@ -35,9 +35,6 @@ let calculatedDisplay = {
     maxGovPayment: userCat.maxPayment,
 }
 
-// console.log(`User worked ${workIncomeTotal} , was elegible for ${userCat.maxPayment} but got deducted ${deductions} `);
-// console.log(totalIncome);
-
 return(calculatedDisplay)
 
 } 
