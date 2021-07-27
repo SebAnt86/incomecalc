@@ -6,8 +6,7 @@ let resultObject = {}
  export const resultDisplay = (result) => {
    resultObject=result;
    console.log("inside function in app : ");
-      window.location.reload(false)
- }
+      }
 function App() {
   
   return (
