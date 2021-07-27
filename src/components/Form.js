@@ -11,12 +11,12 @@ export function Form(props) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const result = incomeCalc(
+    const finalCalc = incomeCalc(
       hourRate,
       hoursWorked,
       userCategories[userCategory]
     );
-    setResult(result);
+    setResult(finalCalc);
     setHoursWorked(0);
     setHourRate(0);
     setUserCategory(0);

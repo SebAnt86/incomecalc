@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <h1> INCOME CALC</h1>
       <Form setResult={setResult} />
-      <h5> result </h5>
+   
       <Result result={result} />
     </div>
   );

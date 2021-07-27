@@ -47,6 +47,7 @@ export const incomeCalc = (userRate, userHours =1, userCategories) => {
     deductions,
     maxGovPayment: userCategories.maxPayment,
     averageWage,
+    workHours : userHours,
   };
 
   return calculatedDisplay;
