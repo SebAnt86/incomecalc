@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Result(props) {
   const { result } = props;
   // if (!result) {
@@ -8,7 +9,7 @@ function Result(props) {
   const finalGovPay= Number((result.maxGovPayment - result.deductions).toFixed(2));
   console.log(typeof(finalGovPay));
   return (
-    <div>
+    <div className="result">
       <h1> RESULT </h1>
       <div>
         <p> Income from working: {result.workHours} hours is ${result.workIncomeTotal} </p>

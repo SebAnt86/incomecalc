@@ -39,7 +39,7 @@ export function Form(props) {
     // hiddenField.style.display = selectField.value === "5" ? "block" : "none";
   }
   return (
-    <form onSubmit={handleSubmit} id="userForm">
+    <form onSubmit={handleSubmit} id="userForm" className="form">
       <div>
         <h3> USER INPUT </h3>
         <label>
