@@ -93,9 +93,16 @@ body {
         "form form" 
         "result result"                  
         "footer footer";
+        grid-gap:10px;
     }
     .heading,.form,.result,.footer {
-           width: 100%;
-          
-    }
+           width: 90%;
+          }
+          .result{
+              height: 300px;
+          }
+          .footer {
+              text-align: center;
+              margin: 1rem 1rem;
+          }
 }
