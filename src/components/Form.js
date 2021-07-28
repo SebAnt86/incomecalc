@@ -6,7 +6,7 @@ import { userCategories } from "./govTables.js";
 export function Form(props) {
   const { setResult } = props;
   const [hoursWorked, setHoursWorked] = useState("");
-  const [hourRate, setHourRate] = useState("");
+  const [hourRate, setHourRate] = useState(20.33);
   const [userCategory, setUserCategory] = useState("");
   const [partnerIncome, setPartnerIncome] = useState("");
   const [timePeriod, setTimePeriod] = useState("fortnight");

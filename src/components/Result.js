@@ -5,7 +5,8 @@ function Result(props) {
   // if (!result) {
   //   return <div> EMPTY </div>;
   // }
-  const finalGovPay= Number(result.maxGovPayment - result.deductions).toFixed(2);
+  const finalGovPay= Number((result.maxGovPayment - result.deductions).toFixed(2));
+  console.log(typeof(finalGovPay));
   return (
     <div>
       <h1> RESULT </h1>
@@ -16,7 +17,7 @@ function Result(props) {
         <p> Final Gov payment received:  ${finalGovPay} </p>
         <p> Total income  is ${result.totalIncome} </p>
      
-        <p> Your average wage after deduction is  {result.averageWage} </p>
+        {/* <p> Your average wage after deduction is  {result.averageWage} </p> */}
       </div>
     </div>
   );
