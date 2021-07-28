@@ -41,24 +41,21 @@ export function Form(props) {
   return (
     <form onSubmit={handleSubmit} id="userForm" className="form">
       <div>
-        <h3> USER INPUT </h3>
+        <h2> USER INPUT </h2>
         <label>
           Time Period:
           <select
-          value={timePeriod}
-          onChange={(e) => setTimePeriod(e.target.value)}
-          >
+                value={timePeriod}
+                onChange={(e) => setTimePeriod(e.target.value)}>
              
             <option value="week"> Weekly </option>
             <option value="fortnight" > Fortnightly </option>
             <option value="month"> Monthly </option>
           </select>
           </label>
-          <br />
-     
-          
+          {/* <br /> */}
         <label>
-          Hours Worked:
+          Hours Worked :
           <input
             type="number"
             value={hoursWorked}
@@ -66,11 +63,11 @@ export function Form(props) {
             placeholder="e.g. 20"
             required
           />
-          <br />
+          {/* <br /> */}
         </label>
 
         <label>
-          Hourly Rate:
+          Hourly Rate :
           <input
             type="number"
             value={hourRate}
@@ -78,7 +75,7 @@ export function Form(props) {
             placeholder="e.g. 20"
             required
           />
-          <br />
+          {/* <br /> */}
         </label>
         <div id="hiddenInput" style={{ display: "none" }}>
           <label>
@@ -88,8 +85,6 @@ export function Form(props) {
               onChange={(e) => setPartnerIncome(e.target.value)}
               placeholder="Inc their gov assist"
              />
-            
-            <br />
           </label>
         </div>
 
@@ -120,8 +115,8 @@ export function Form(props) {
             <option value="6">Partnered, Partner with pension</option>
           </select>
         </label>
-
-        <input type="submit" value="Submit" />
+        <button>Submit</button>
+        {/* <input type="submit" value="Submit" /> */}
       </div>
     </form>
   );

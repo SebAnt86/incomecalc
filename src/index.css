@@ -3,48 +3,87 @@
 }
 
 body {
-    /* background-color: rgb(76, 0, 255); */
-    /* background-color: teal; */
+    background-color: rgb(97, 172, 172);
     font-family: sans-serif;
     margin: 0;
     
 }
 
 .page_design {
-    background-color: teal;
     display: grid;
     grid-template-columns: repeat(2,2fr);
     grid-template-areas: "header header"
                          "form  result"
                          "footer footer"  ;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
     /* height: 100vh; */
     }
 
 .heading {
     grid-area: header;
-    background-color: yellow;
    text-align: center;
    font-size: 3em;
    padding: 2em;
+   text-decoration: underline;
 }
 
 .form {
-    background-color: aqua;
+    background-color: rgb(47, 73, 92);
     grid-area:form ;
     text-align: center;
+    height: 400px;
+    color: azure;
+    width: 80%;
+    margin: 0 auto;
 }
 
+
+    label {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+        display: block;
+        margin-top: 1.3em;
+        padding: 0.7em;
+    }
+    
+    input {
+    width: 40%;
+    height: 2rem;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px ;
+    }
+   select {
+       /* color:red; */
+       width: 40%;
+       height: 2rem;
+       margin-left: 10px ;
+   }
+
+  button {
+    font-size: 0.8em;
+    padding: 0.5rem;
+    border-radius: 15%;
+    /* margin: 40px; */
+    margin-top: 10px;
+    /* background-color: rgb(28, 168, 214); */
+  }
+
 .result {
-    background-color: tomato;
+     background-color: rgb(124, 84, 76); 
     grid-area: result;
     text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    color: azure;
 }
 
 .footer {
     grid-area: footer;
     font-size: 1rem;
-    background-color: red;
+    margin: 2rem auto;
+    text-align: center;
 }
 
 @media(max-width:786px) {
