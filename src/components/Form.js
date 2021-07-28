@@ -6,81 +6,102 @@ import { userCategories } from "./govTables.js";
 export function Form(props) {
   const { setResult } = props;
   const [hoursWorked, setHoursWorked] = useState("");
-  const [hourRate, setHourRate] = useState("");
+  const [hourRate, setHourRate] = useState(20.33);
   const [userCategory, setUserCategory] = useState("");
+  const [partnerIncome, setPartnerIncome] = useState("");
+  const [timePeriod, setTimePeriod] = useState("fortnight");
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const finalCalc = incomeCalc(
       hourRate,
       hoursWorked,
-      userCategories[userCategory]
+      userCategories[userCategory],
+      partnerIncome,
     );
+    
     setResult(finalCalc);
-    
-    
-     // reset the form 
+
+    // reset the form
     // setHoursWorked("");
     // setHourRate("");
     // setUserCategory("");
     // document.getElementById("userForm").reset();
   };
-  function ShowHideDiv(){
+  function ShowHideDiv() {
     const hiddenField = document.getElementById("hiddenInput");
     const selectField = document.getElementById("selectField");
-    if(selectField.value === "5" || selectField.value === "6"){
+    if (selectField.value === "5" || selectField.value === "6") {
       hiddenField.style.display = "block";
-    }
-    else{
+    } else {
       hiddenField.style.display = "none";
     }
-   // hiddenField.style.display = selectField.value === "5" ? "block" : "none";
+    // hiddenField.style.display = selectField.value === "5" ? "block" : "none";
   }
   return (
     <form onSubmit={handleSubmit} id="userForm">
       <div>
         <h3> USER INPUT </h3>
         <label>
+          Time Period:
+          <select
+          value={timePeriod}
+          onChange={(e) => setTimePeriod(e.target.value)}
+          >
+             
+            <option value="week"> Weekly </option>
+            <option value="fortnight" > Fortnightly </option>
+            <option value="month"> Monthly </option>
+          </select>
+          </label>
+          <br />
+     
           
+        <label>
           Hours Worked:
           <input
             type="number"
             value={hoursWorked}
             onChange={(e) => setHoursWorked(e.target.value)}
-            placeholder="ex. 20"
+            placeholder="e.g. 20"
             required
           />
           <br />
         </label>
 
         <label>
-          
           Hourly Rate:
           <input
             type="number"
             value={hourRate}
             onChange={(e) => setHourRate(e.target.value)}
-            placeholder="ex. 20"
+            placeholder="e.g. 20"
             required
           />
           <br />
         </label>
-        <div id="hiddenInput" style={{display: "none"}}>
-        <label >
-          
-          Partners Income:
-          <input
-            type="number"
-          />
-          <br />
-        </label>
+        <div id="hiddenInput" style={{ display: "none" }}>
+          <label>
+            Partners Income:
+            <input type="number" 
+              value={partnerIncome}
+              onChange={(e) => setPartnerIncome(e.target.value)}
+              placeholder="Inc their gov assist"
+             />
+            
+            <br />
+          </label>
         </div>
-        
 
         <label>
-          
           User Category:
-          <select id = "selectField" onChange={(e) => {setUserCategory(Number(e.target.value)); ShowHideDiv();}}>
+          <select
+            id="selectField"
+            onChange={(e) => {
+              setUserCategory(Number(e.target.value));
+              ShowHideDiv();
+            }}
+          >
             <option>Please select a category</option>
             <option value="0">Single, no children</option>
             <option value="1">

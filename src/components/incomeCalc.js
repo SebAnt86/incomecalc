@@ -1,7 +1,7 @@
 // we should do all the calculations by week, then if timePeriod changes, we mutiply
 // this function should take:, userCategories, userRate, userHours, and a default partnerIncome
 
-export const incomeCalc = (userRate, userHours =1, userCategories) => {
+export const incomeCalc = (userRate, userHours =1, userCategories, partenerIncome) => {
   // variables to be returned:
   let workIncomeTotal = Number(userRate * userHours);
   let deductions = 0;
@@ -24,9 +24,7 @@ export const incomeCalc = (userRate, userHours =1, userCategories) => {
       // deduction from 256 to incomeLimit
       threshold2 = ((workIncomeTotal - 150 - 106) * userCategories.bracketTwo);
     
-      console.log("threshold2:" + threshold2);
-                        // .60 // 1080 - 150 = (930 - 557 ) ((63)+494)  ==    
-                        // .40 // 1080 - 150 = (930 - 371 ) ((42)+329) == 
+
       deductions = Math.round((106 * userCategories.bracketOne) + threshold2);
     }
   }
