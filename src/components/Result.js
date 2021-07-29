@@ -24,9 +24,9 @@ function Result(props) {
           {/* <div> */}
         <TableBody>
           <TableRow>
-             <TableCell>Income from working:</TableCell>
+             <TableCell>Income from working {result.workHours} hours is :</TableCell>
               <TableCell align="right">
-                {result.workHours} hours is ${result.workIncomeTotal}
+               ${result.workIncomeTotal}
               </TableCell>
             </TableRow>
           <TableRow>

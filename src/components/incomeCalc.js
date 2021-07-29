@@ -40,9 +40,9 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome
   
 
   let calculatedDisplay = {
-    totalIncome,
-    workIncomeTotal,
-    deductions,
+    totalIncome : totalIncome.toFixed(2),
+    workIncomeTotal : workIncomeTotal.toFixed(2),
+    deductions : deductions.toFixed(2),
     maxGovPayment: (userCategories.maxPayment),
     averageWage,
     workHours : userHours,
