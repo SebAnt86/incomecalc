@@ -60,8 +60,8 @@ body {
    }
 
    Button {
-       margin-top: 2rem !important;
-       margin-bottom: 2rem !important;
+       margin: 2rem !important;
+       /* margin-bottom: 2rem !important; */
    }
 
 .result {
@@ -112,9 +112,7 @@ TableCell {
         "footer footer";
         grid-gap:10px;
     }
-    .heading,.form,.result,.footer {
-           /* width: 90%; */
-          }
+    
           .result{
               height: 300px;
               height: inherit;
