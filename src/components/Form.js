@@ -120,7 +120,6 @@ export function Form(props) {
             <option value="6">Partnered, Partner with pension</option>
           </select>
         </label>
-        <button>Submit</button>
         <button onClick={()=>{setHoursWorked("");
                               setHourRate("");
                               setPartnerIncome("");
