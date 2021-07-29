@@ -36,8 +36,9 @@ export function Form(props) {
     } else {
       hiddenField.style.display = "none";
     }
-    // hiddenField.style.display = selectField.value === "5" ? "block" : "none";
-  }
+  
+  };
+  
   return (
     <form onSubmit={handleSubmit} id="userForm" className="form">
       <div>
@@ -45,6 +46,7 @@ export function Form(props) {
         <label>
           Time Period:
           <select
+                id="time_period"
                 value={timePeriod}
                 onChange={(e) => setTimePeriod(e.target.value)}>
              
@@ -57,6 +59,7 @@ export function Form(props) {
         <label>
           Hours Worked :
           <input
+            id="hoursWork"
             type="number"
             value={hoursWorked}
             onChange={(e) => setHoursWorked(e.target.value)}
@@ -92,6 +95,7 @@ export function Form(props) {
           User Category:
           <select
             id="selectField"
+            value={userCategory}
             onChange={(e) => {
               setUserCategory(Number(e.target.value));
               ShowHideDiv();
@@ -116,6 +120,11 @@ export function Form(props) {
           </select>
         </label>
         <button>Submit</button>
+        <button onClick={()=>{setHoursWorked("");
+                              setHourRate("");
+                              setPartnerIncome("");
+                              setUserCategory("");
+                              setTimePeriod("");}}>Reset</button>
         {/* <input type="submit" value="Submit" /> */}
       </div>
     </form>
