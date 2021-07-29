@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/incomecal/static/css/main.e179bd5f.chunk.css",
-    "main.js": "/incomecal/static/js/main.abee907a.chunk.js",
-    "main.js.map": "/incomecal/static/js/main.abee907a.chunk.js.map",
-    "runtime-main.js": "/incomecal/static/js/runtime-main.d165ae36.js",
-    "runtime-main.js.map": "/incomecal/static/js/runtime-main.d165ae36.js.map",
-    "static/js/2.c779335e.chunk.js": "/incomecal/static/js/2.c779335e.chunk.js",
-    "static/js/2.c779335e.chunk.js.map": "/incomecal/static/js/2.c779335e.chunk.js.map",
-    "index.html": "/incomecal/index.html",
-    "static/css/main.e179bd5f.chunk.css.map": "/incomecal/static/css/main.e179bd5f.chunk.css.map",
-    "static/js/2.c779335e.chunk.js.LICENSE.txt": "/incomecal/static/js/2.c779335e.chunk.js.LICENSE.txt"
+    "main.css": "/incomecalc/static/css/main.e179bd5f.chunk.css",
+    "main.js": "/incomecalc/static/js/main.abee907a.chunk.js",
+    "main.js.map": "/incomecalc/static/js/main.abee907a.chunk.js.map",
+    "runtime-main.js": "/incomecalc/static/js/runtime-main.123d18ab.js",
+    "runtime-main.js.map": "/incomecalc/static/js/runtime-main.123d18ab.js.map",
+    "static/js/2.c779335e.chunk.js": "/incomecalc/static/js/2.c779335e.chunk.js",
+    "static/js/2.c779335e.chunk.js.map": "/incomecalc/static/js/2.c779335e.chunk.js.map",
+    "index.html": "/incomecalc/index.html",
+    "static/css/main.e179bd5f.chunk.css.map": "/incomecalc/static/css/main.e179bd5f.chunk.css.map",
+    "static/js/2.c779335e.chunk.js.LICENSE.txt": "/incomecalc/static/js/2.c779335e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d165ae36.js",
+    "static/js/runtime-main.123d18ab.js",
     "static/js/2.c779335e.chunk.js",
     "static/css/main.e179bd5f.chunk.css",
     "static/js/main.abee907a.chunk.js"
