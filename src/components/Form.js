@@ -25,7 +25,7 @@ export function Form(props) {
     evt.preventDefault();
     
 
-    if(hoursWorked < 0){
+    if(hoursWorked < 1){
         hoursWorkWarning.style.display = "block";
         hoursWorkBool = false;
       } else{
@@ -33,7 +33,7 @@ export function Form(props) {
         hoursWorkBool = true;
       }
     
-      if(hourRate < 0){
+      if(hourRate < 1){
         hourRateWarning.style.display = "block";
         hourRateBool = false;
       } else{
