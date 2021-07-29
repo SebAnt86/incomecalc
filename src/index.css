@@ -96,6 +96,12 @@ body {
     text-align: center;
 }
 
+.validation {
+    color: rgb(49, 30, 142);
+}
+
+
+
 @media(max-width:786px) {
     .page_design {
         grid-template-areas:

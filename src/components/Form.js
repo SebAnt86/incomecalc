@@ -12,16 +12,57 @@ export function Form(props) {
   const [partnerIncome, setPartnerIncome] = useState("");
   const [timePeriod, setTimePeriod] = useState("fortnight");
 
+  
+  const hoursWorkWarning = document.getElementById("hoursWorkWarning");
+  let hoursWorkBool = false;
+  const hourRateWarning = document.getElementById("hourRateWarning");
+  let hourRateBool = false;
+  const userCategoryWarning = document.getElementById("userCategoryWarning");
+  let userCategoryWarningBool = false;
+  
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const finalCalc = incomeCalc(
-      hourRate,
-      hoursWorked,
-      userCategories[userCategory],
-      partnerIncome,
-    );
     
-    setResult(finalCalc);
+
+    if(hoursWorked < 0){
+        hoursWorkWarning.style.display = "block";
+        hoursWorkBool = false;
+      } else{
+        hoursWorkWarning.style.display = "none";
+        hoursWorkBool = true;
+      }
+    
+      if(hourRate < 0){
+        hourRateWarning.style.display = "block";
+        hourRateBool = false;
+      } else{
+        hourRateWarning.style.display = "none";
+        hourRateBool = true;
+      }
+      
+      const userCatValus = [0, 1, 2, 3, 4, 5, 6];
+
+      if(!userCatValus.includes(userCategory)){
+        userCategoryWarning.style.display = "block";
+        userCategoryWarningBool = false;
+      } else{
+        userCategoryWarning.style.display = "none";
+        userCategoryWarningBool = true;
+      }
+
+
+    if(hoursWorkBool && hourRateBool && userCategoryWarningBool){
+        const finalCalc = incomeCalc(
+            hourRate,
+            hoursWorked,
+            userCategories[userCategory],
+            partnerIncome,
+          );
+          
+          setResult(finalCalc);
+    }
+    
 
     // reset the form
     // setHoursWorked("");
@@ -30,8 +71,8 @@ export function Form(props) {
     // document.getElementById("userForm").reset();
   };
   function ShowHideDiv() {
-    const hiddenField = document.getElementById("hiddenInput");
-    const selectField = document.getElementById("selectField");
+      const hiddenField = document.getElementById("hiddenInput");
+      const selectField = document.getElementById("selectField");
     if (selectField.value === "5" || selectField.value === "6") {
       hiddenField.style.display = "block";
     } else {
@@ -39,7 +80,7 @@ export function Form(props) {
     }
   
   };
-  
+
   return (
     <form onSubmit={handleSubmit} id="userForm" className="form">
       <div>
@@ -69,6 +110,7 @@ export function Form(props) {
           />
           {/* <br /> */}
         </label>
+        <span id="hoursWorkWarning" className="validation" style={{ display: "none" }}>Please insert a positive number.</span>
 
         <label>
           Hourly Rate :
@@ -81,6 +123,8 @@ export function Form(props) {
           />
           {/* <br /> */}
         </label>
+        <span id="hourRateWarning" className="validation" style={{ display: "none" }}>Please insert a positive number.</span>
+
         <div id="hiddenInput" style={{ display: "none" }}>
           <label>
             Partners Income:
@@ -120,6 +164,7 @@ export function Form(props) {
             <option value="6">Partnered, Partner with pension</option>
           </select>
         </label>
+        <span id="userCategoryWarning" className="validation" style={{ display: "none" }}>Please select a valid catgory.</span>
         <Button  type="submit" value="Submit" variant="contained">Submit</Button>
         <Button variant="contained"
         onClick={()=>{setHoursWorked("");
