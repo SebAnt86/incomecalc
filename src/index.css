@@ -80,6 +80,9 @@ body {
     font-size: 2rem;
     margin:20px 10px 50px 10px;
 }
+TableCell {
+    color: azure !important;
+}
 
  .result , .form {
     transition: transform 0.3s;
