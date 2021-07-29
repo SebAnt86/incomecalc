@@ -32,7 +32,6 @@ body {
     text-align: center;
     height: 400px;
     color: rgb(242, 230, 230);
-    width: 90%;
     margin: 0 auto;
     height: auto;
 }
@@ -46,7 +45,7 @@ body {
     }
     
     input {
-    width: 40%;
+   
     height: 2rem;
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -71,7 +70,6 @@ body {
     grid-area: result;
     text-align: center;
     line-height: 2em;
-     width: 90%;
     margin: 0 auto;
     height: auto;
     color: azure;
@@ -115,7 +113,7 @@ TableCell {
         grid-gap:10px;
     }
     .heading,.form,.result,.footer {
-           width: 90%;
+           /* width: 90%; */
           }
           .result{
               height: 300px;
