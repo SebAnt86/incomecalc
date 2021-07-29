@@ -120,13 +120,14 @@ export function Form(props) {
             <option value="6">Partnered, Partner with pension</option>
           </select>
         </label>
-        <button onClick={()=>{setHoursWorked("");
+        <Button  type="submit" value="Submit" variant="contained">Submit</Button>
+        <Button variant="contained"
+        onClick={()=>{setHoursWorked("");
                               setHourRate("");
                               setPartnerIncome("");
                               setUserCategory("");
-                              setTimePeriod("");}}>Reset</button>
-        <Button variant="contained">Submit</Button>
-        {/* <input type="submit" value="Submit" /> */}
+                              setTimePeriod("");}}>Reset</Button>
+       
       </div>
     </form>
   );
