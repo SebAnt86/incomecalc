@@ -10,7 +10,7 @@ function Result(props) {
   console.log(typeof(finalGovPay));
   return (
     <div className="result">
-      <h2> RESULT </h2>
+      <h2 className="result_heading"> RESULT </h2>
       <div>
         <p> Income from working: {result.workHours} hours is ${result.workIncomeTotal} </p>
         <p> The goverment payment max you could receive was ${result.maxGovPayment} </p>

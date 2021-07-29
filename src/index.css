@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(97, 172, 172);
+    background-color: rgba(142, 154, 208, 0.481);
     font-family: sans-serif;
     margin: 0;
     
@@ -15,8 +15,6 @@ body {
     grid-template-areas: "header header"
                          "form  result"
                          "footer footer"  ;
-    /* grid-gap: 10px; */
-    /* height: 100vh; */
     }
 
 .heading {
@@ -28,18 +26,19 @@ body {
 }
 
 .form {
-    background-color: rgb(47, 73, 92);
+    /* background-color: rgb(13, 73, 73); */
+    background-color: rgba(31, 40, 91, 0.481);
     grid-area:form ;
     text-align: center;
     height: 400px;
-    color: azure;
-    width: 80%;
+    color: rgb(242, 230, 230);
+    width: 90%;
     margin: 0 auto;
+    height: auto;
 }
 
 
     label {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 1rem;
         display: block;
         margin-top: 1.3em;
@@ -52,37 +51,48 @@ body {
     border: 1px solid lightgray;
     border-radius: 5px;
     padding: 5px;
-    margin-left: 10px ;
+    margin-left: 10px;
+    
     }
    select {
-       /* color:red; */
        width: 40%;
        height: 2rem;
        margin-left: 10px ;
    }
 
-  button {
-    font-size: 0.8em;
-    padding: 0.5rem;
-    border-radius: 15%;
-    /* margin: 40px; */
-    margin-top: 10px;
-    /* background-color: rgb(28, 168, 214); */
-  }
+   Button {
+       margin-top: 2rem !important;
+       margin-bottom: 2rem !important;
+   }
 
 .result {
-     background-color: rgb(124, 84, 76); 
+     /* background-color: rgb(124, 84, 76);  */
+     background-color: rgba(30, 40, 97, 0.481);
     grid-area: result;
     text-align: center;
-    width: 80%;
+    line-height: 2em;
+     width: 90%;
     margin: 0 auto;
+    height: auto;
     color: azure;
 }
+.result_heading {
+    font-size: 2rem;
+    margin:20px 10px 50px 10px;
+}
+
+ .result , .form {
+    transition: transform 0.3s;
+ }
+ .result:hover , .form:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(.96);
+ }
 
 .footer {
     grid-area: footer;
     font-size: 1rem;
-    margin: 3rem;
+    margin: 5rem;
     text-align: center;
 }
 
@@ -100,6 +110,7 @@ body {
           }
           .result{
               height: 300px;
+              height: inherit;
           }
           .footer {
               text-align: center;
