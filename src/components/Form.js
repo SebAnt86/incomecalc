@@ -165,7 +165,7 @@ export function Form(props) {
           </select>
         </label>
         <span id="userCategoryWarning" className="validation" style={{ display: "none" }}>Please select a valid catgory.</span>
-        <Button  type="submit" value="Submit" variant="contained">Submit</Button>
+        <Button  type="submit" value="Submit" variant="contained">Calculate</Button>
         <Button variant="contained"
         onClick={()=>{setHoursWorked("");
                               setHourRate("");
