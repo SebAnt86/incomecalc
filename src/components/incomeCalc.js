@@ -1,16 +1,19 @@
 // we should do all the calculations by week, then if timePeriod changes, we mutiply
 // this function should take:, userCategories, userRate, userHours, and a default partnerIncome
 
-export const incomeCalc = (userRate, userHours =1, userCategories, partenerIncome) => {
+export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome =0) => {
   // variables to be returned:
-  let workIncomeTotal = Number(userRate * userHours);
+  const workIncomeTotal = Number(userRate * userHours);
   let deductions = 0;
 
   let threshold1 = Number(((workIncomeTotal - 150) * userCategories.bracketOne).toFixed(2)); // how much money he made between 150 to 256
   let threshold2 = 0; // between 256 to max
 
-  if (workIncomeTotal > userCategories.incomeLimit) {
-    //<-- if total income higher than limit
+  if (workIncomeTotal > userCategories.incomeLimit || // user exceeds limit
+    partnerIncome > userCategories.partnerLimit || // partner exceeds limit
+    (workIncomeTotal+partnerIncome > userCategories.combinedLimit) // combined exceeds limit
+    ) { 
+      console.log("exceeded");
     deductions = userCategories.maxPayment;
   } else if (workIncomeTotal < userCategories.incomeLimit) {
       // deduction from 0 to 150
@@ -27,6 +30,9 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partenerIncom
 
       deductions = Math.round((106 * userCategories.bracketOne) + threshold2);
     }
+    if(partnerIncome > 1124){
+      deductions =+ ((partnerIncome-1124)* .60);
+    };
   }
   let totalIncome = (workIncomeTotal + userCategories.maxPayment - deductions);
       

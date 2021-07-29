@@ -7,7 +7,6 @@ function Result(props) {
   //   return <div> EMPTY </div>;
   // }
   const finalGovPay= Number((result.maxGovPayment - result.deductions).toFixed(2));
-  console.log(typeof(finalGovPay));
   return (
     <div className="result">
       <h2 className="result_heading"> RESULT </h2>
