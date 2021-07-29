@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { incomeCalc } from "./incomeCalc";
 import { userCategories } from "./govTables.js";
+import { Button } from "@material-ui/core";
 
 export function Form(props) {
   const { setResult } = props;
@@ -125,6 +126,7 @@ export function Form(props) {
                               setPartnerIncome("");
                               setUserCategory("");
                               setTimePeriod("");}}>Reset</button>
+        <Button variant="contained">Submit</Button>
         {/* <input type="submit" value="Submit" /> */}
       </div>
     </form>
