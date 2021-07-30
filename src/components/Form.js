@@ -66,6 +66,7 @@ export function Form(props) {
          }
        }
 
+    //chaeck if all the required fields are vilid before strating the calculation
     if(hoursWorkBool && hourRateBool && userCategoryWarningBool && partnerIncomeWarningBool){
         const finalCalc = incomeCalc(
             hourRate,
