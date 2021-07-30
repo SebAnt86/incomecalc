@@ -30,7 +30,7 @@ body {
     background-color: rgba(31, 40, 91, 0.481);
     grid-area:form ;
     text-align: center;
-    height: 400px;
+    /* height: 400px; */
     color: rgb(242, 230, 230);
     margin: 0 auto;
     height: auto;
@@ -82,13 +82,13 @@ TableCell {
     color: azure !important;
 }
 
- .result , .form {
+ /* .result , .form {
     transition: transform 0.3s;
- }
- .result:hover , .form:hover {
+ } */
+ /* .result:hover , .form:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     transform: scale(.96);
- }
+ } */
 
 .footer {
     grid-area: footer;

@@ -19,12 +19,13 @@ export function Form(props) {
   let hourRateBool = false;
   const userCategoryWarning = document.getElementById("userCategoryWarning");
   let userCategoryWarningBool = false;
-  
+  const partnerIncomeWarning = document.getElementById("partnerIncomeWarning");
+  let partnerIncomeWarningBool = true;
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     
-
+    // validation for the hours worked input
     if(hoursWorked < 1){
         hoursWorkWarning.style.display = "block";
         hoursWorkBool = false;
@@ -32,7 +33,8 @@ export function Form(props) {
         hoursWorkWarning.style.display = "none";
         hoursWorkBool = true;
       }
-    
+
+    // validation for the hours rate input
       if(hourRate < 1){
         hourRateWarning.style.display = "block";
         hourRateBool = false;
@@ -41,6 +43,7 @@ export function Form(props) {
         hourRateBool = true;
       }
       
+      // validation for the user category
       const userCatValus = [0, 1, 2, 3, 4, 5, 6];
 
       if(!userCatValus.includes(userCategory)){
@@ -51,8 +54,19 @@ export function Form(props) {
         userCategoryWarningBool = true;
       }
 
+      // validation for the partner income 
+       if(userCategory === 5 || userCategory === 6){
+         partnerIncomeWarningBool = false;
+         if(partnerIncome < 1){
+            partnerIncomeWarning.style.display = "block";
+            partnerIncomeWarningBool = false;
+         }else{
+            partnerIncomeWarning.style.display = "none";
+            partnerIncomeWarningBool = true;
+         }
+       }
 
-    if(hoursWorkBool && hourRateBool && userCategoryWarningBool){
+    if(hoursWorkBool && hourRateBool && userCategoryWarningBool && partnerIncomeWarningBool){
         const finalCalc = incomeCalc(
             hourRate,
             hoursWorked,
@@ -134,6 +148,7 @@ export function Form(props) {
               placeholder="Inc their gov assist"
              />
           </label>
+          <span id="partnerIncomeWarning" className="validation" style={{ display: "none" }}>Please insert a positive number.</span>
         </div>
 
         <label>
