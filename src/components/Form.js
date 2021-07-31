@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { incomeCalc } from "./incomeCalc";
 import { userCategories } from "./govTables.js";
-import { Button } from "@material-ui/core";
+import { Button, Container } from "@material-ui/core";
+
 
 export function Form(props) {
   const { setResult } = props;
@@ -97,9 +98,10 @@ export function Form(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} id="userForm" className="form">
+    <div className="form">
+    <form onSubmit={handleSubmit} id="userForm" >
       <div>
-        <h2> USER INPUT </h2>
+      <h2 className="_titles"> INPUT </h2>
         <label>
           Time Period:
           <select
@@ -191,6 +193,7 @@ export function Form(props) {
        
       </div>
     </form>
+    </div>
   );
 }
 

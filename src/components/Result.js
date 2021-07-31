@@ -1,15 +1,10 @@
 import React from "react";
-import { Table, TableRow ,TableCell,TableBody } from '@material-ui/core';
+import { Table, TableRow ,TableCell,TableBody, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
+
 
 function Result(props) {
   const { result } = props;
-  const classes = useStyles();
   // const classes = useStyles();
   // if (!result) {
   //   return <div> EMPTY </div>;
@@ -17,10 +12,10 @@ function Result(props) {
   const finalGovPay= Number((result.maxGovPayment - result.deductions).toFixed(2));
   //console.log(typeof(finalGovPay));
   return (
-    <div className="result">
-      <h2 className="result_heading"> RESULT </h2>
+     <div className="result">
+      <h2 className="_titles"> RESULT </h2>
       {/* <TableContainer component={Paper}> */}
-      <Table className={classes.table}  aria-label="simple table">
+      <Table className="_table"  aria-label="simple table">
           {/* <div> */}
         <TableBody>
           <TableRow>
