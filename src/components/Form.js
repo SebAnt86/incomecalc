@@ -164,7 +164,7 @@ export function Form(props) {
               ShowHideDiv();
             }}
           >
-            <option value="0" >Please select a category</option>
+            <option >Please select a category</option>
             <option value="0">Single, no children</option>
             <option value="1">
               Single, NOT the principal carer of a dependent child or children
