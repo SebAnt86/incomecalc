@@ -5,19 +5,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 function Result(props) {
   const { result } = props;
-  // const classes = useStyles();
   if (!result) {
     return <div> EMPTY </div>;
   }
 
-  //console.log(typeof(finalGovPay));
   return (
      <div className="result">
       <h2 className="_titles"> RESULT </h2>
-      {/* <TableContainer component={Paper}> */}
       <Table className="_table"  aria-label="simple table">
-          {/* <div> */}
-        <TableBody>
+          <TableBody>
           <TableRow>
              <TableCell>Income from working {result.workHours} hours is :</TableCell>
               <TableCell align="right">
@@ -46,11 +42,9 @@ function Result(props) {
             <TableCell align="right">${result.totalIncome}</TableCell>
           </TableRow>
      
-            {/* <p> Your average wage after deduction is  {result.averageWage} </p> */}
         </TableBody>
       </Table>
-        {/* </TableContainer> */}
-        {/* </div> */}
+
     </div>
   );
 }

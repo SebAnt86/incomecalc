@@ -43,7 +43,7 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome
     totalIncome : totalIncome.toFixed(2),
     workIncomeTotal : workIncomeTotal.toFixed(2),
     deductions : deductions.toFixed(2),
-    maxGovPayment: (userCategories.maxPayment),
+    maxGovPayment: userCategories.maxPayment.toFixed(2),
     averageWage,
     finalGovPay :finalGovPay.toFixed(2),
     workHours : userHours,

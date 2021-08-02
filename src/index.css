@@ -69,12 +69,14 @@ body {
 
 
 .footer {
+    background-color: rgb(255, 255, 255);
     grid-area: footer;
     text-align: center;
     font-size: 1rem;
- }
+   }
 
 .footer > p {
+    padding:10px;
     margin: auto; /* this is centering the footer !! ??? */
     width: clamp(45ch, 50%, 75ch); 
 }
