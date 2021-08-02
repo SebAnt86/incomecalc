@@ -13,7 +13,9 @@ export function Form(props) {
   const [partnerIncome, setPartnerIncome] = useState("");
   const [timePeriod, setTimePeriod] = useState("fortnight");
 
-  
+  const hiddenField = document.getElementById("hiddenInput");
+  const selectField = document.getElementById("selectField");
+
   const hoursWorkWarning = document.getElementById("hoursWorkWarning");
   let hoursWorkBool = false;
   const hourRateWarning = document.getElementById("hourRateWarning");
@@ -80,15 +82,27 @@ export function Form(props) {
     }
     
 
-    // reset the form
-    // setHoursWorked("");
-    // setHourRate("");
-    // setUserCategory("");
-    // document.getElementById("userForm").reset();
+    
   };
-  function ShowHideDiv() {
-      const hiddenField = document.getElementById("hiddenInput");
-      const selectField = document.getElementById("selectField");
+
+  // function to reset the form's fields
+  const formReset = () => {
+    // reset fields
+    setUserCategory("");
+    setHoursWorked("");
+    setHourRate("");
+    setPartnerIncome("");
+    setTimePeriod("fortnight");
+
+    // reset the warning spans 
+    hoursWorkWarning.style.display = "none";
+    hourRateWarning.style.display = "none";
+    userCategoryWarning.style.display = "none";
+    partnerIncomeWarning.style.display = "none";
+    hiddenField.style.display = "none";
+  }
+
+  const ShowHideDiv = () => {
     if (selectField.value === "5" || selectField.value === "6") {
       hiddenField.style.display = "block";
     } else {
@@ -114,7 +128,7 @@ export function Form(props) {
             <option value="month"> Monthly </option>
           </select>
           </label>
-          {/* <br /> */}
+         
         <label>
           Hours Worked :
           <input
@@ -125,7 +139,7 @@ export function Form(props) {
             placeholder="e.g. 20"
             required
           />
-          {/* <br /> */}
+          
         </label>
         <span id="hoursWorkWarning" className="validation" style={{ display: "none" }}>Please insert a positive number.</span>
 
@@ -138,7 +152,7 @@ export function Form(props) {
             placeholder="e.g. 20"
             required
           />
-          {/* <br /> */}
+         
         </label>
         <span id="hourRateWarning" className="validation" style={{ display: "none" }}>Please insert a positive number.</span>
 
@@ -148,7 +162,7 @@ export function Form(props) {
             <input type="number" 
               value={partnerIncome}
               onChange={(e) => setPartnerIncome(e.target.value)}
-              placeholder="Inc their gov assist"
+              placeholder="e.g. 20"
              />
           </label>
           <span id="partnerIncomeWarning" className="validation" style={{ display: "none" }}>Please insert a positive number.</span>
@@ -185,11 +199,13 @@ export function Form(props) {
         <span id="userCategoryWarning" className="validation" style={{ display: "none" }}>Please select a valid catgory.</span>
         <Button  type="submit" value="Submit" variant="contained">Calculate</Button>
         <Button variant="contained"
-        onClick={()=>{setHoursWorked("");
-                              setHourRate("");
-                              setPartnerIncome("");
-                              setUserCategory("");
-                              setTimePeriod("");}}>Reset</Button>
+        // onClick={()=>{setHoursWorked("");
+        //                       setHourRate("");
+        //                       setPartnerIncome("");
+        //                       setUserCategory("");
+        //                       setTimePeriod("");}}>Reset</Button>
+
+        onClick={formReset}>Reset</Button>
        
       </div>
     </form>
