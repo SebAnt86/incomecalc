@@ -11,7 +11,7 @@ export function Form(props) {
   const [hourRate, setHourRate] = useState("");
   const [userCategory, setUserCategory] = useState("");
   const [partnerIncome, setPartnerIncome] = useState("");
-  const [timePeriod, setTimePeriod] = useState("fortnight");
+  const [timePeriod, setTimePeriod] = useState("weekly");
 
   const hiddenField = document.getElementById("hiddenInput");
   const selectField = document.getElementById("selectField");
@@ -76,13 +76,12 @@ export function Form(props) {
             hoursWorked,
             userCategories[userCategory],
             partnerIncome,
+            timePeriod
           );
           
           setResult(finalCalc);
     }
-    
-
-    
+     
   };
 
   // function to reset the form's fields
