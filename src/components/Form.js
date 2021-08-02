@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { incomeCalc } from "./incomeCalc";
 import { userCategories } from "./govTables.js";
-import { Button, Container } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 
 export function Form(props) {
@@ -69,7 +69,7 @@ export function Form(props) {
          }
        }
 
-    //chaeck if all the required fields are vilid before strating the calculation
+    //check if all the required fields are vilid before strating the calculation
     if(hoursWorkBool && hourRateBool && userCategoryWarningBool && partnerIncomeWarningBool){
         const finalCalc = incomeCalc(
             hourRate,
@@ -100,15 +100,28 @@ export function Form(props) {
     userCategoryWarning.style.display = "none";
     partnerIncomeWarning.style.display = "none";
     hiddenField.style.display = "none";
+
+    // reset the result's values
+    let resetValues = { 
+        workHours: 0,
+        workIncomeTotal: 0,
+        maxGovPayment: 0,
+        deductions: 0,
+        finalGovPay: 0,
+        totalIncome: 0
+    }
+      
+      
+      setResult(resetValues);
   }
 
+  // function to show the Partner income field when one of the partner options are selected
   const ShowHideDiv = () => {
     if (selectField.value === "5" || selectField.value === "6") {
       hiddenField.style.display = "block";
     } else {
       hiddenField.style.display = "none";
     }
-  
   };
 
   return (

@@ -1,13 +1,13 @@
 import React from "react";
-import { Table, TableRow ,TableCell,TableBody, Container } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Table, TableRow ,TableCell,TableBody } from '@material-ui/core';
+// import { makeStyles } from '@material-ui/core/styles';
 
 
 function Result(props) {
   const { result } = props;
-  if (!result) {
-    return <div> EMPTY </div>;
-  }
+  // if (!result) {
+  //   return <div> EMPTY </div>;
+  // }
 
   return (
      <div className="result">
