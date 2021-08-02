@@ -92,7 +92,7 @@ export function Form(props) {
     setHoursWorked("");
     setHourRate("");
     setPartnerIncome("");
-    setTimePeriod("fortnight");
+    setTimePeriod("weekly");
 
     // reset the warning spans 
     hoursWorkWarning.style.display = "none";
@@ -135,9 +135,9 @@ export function Form(props) {
                 value={timePeriod}
                 onChange={(e) => setTimePeriod(e.target.value)}>
              
-            <option value="week"> Weekly </option>
-            <option value="fortnight" > Fortnightly </option>
-            <option value="month"> Monthly </option>
+            <option value="weekly"> Weekly </option>
+            <option value="fortnightly"> Fortnightly </option>
+            <option value="monthly"> Monthly </option>
           </select>
           </label>
          
