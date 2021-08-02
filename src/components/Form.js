@@ -8,7 +8,7 @@ import { Button } from "@material-ui/core";
 export function Form(props) {
   const { setResult } = props;
   const [hoursWorked, setHoursWorked] = useState("");
-  const [hourRate, setHourRate] = useState(20.33);
+  const [hourRate, setHourRate] = useState("");
   const [userCategory, setUserCategory] = useState("");
   const [partnerIncome, setPartnerIncome] = useState("");
   const [timePeriod, setTimePeriod] = useState("fortnight");
@@ -111,7 +111,6 @@ export function Form(props) {
         totalIncome: 0
     }
       
-      
       setResult(resetValues);
   }
 
@@ -162,7 +161,7 @@ export function Form(props) {
             type="number"
             value={hourRate}
             onChange={(e) => setHourRate(e.target.value)}
-            placeholder="e.g. 20"
+            placeholder="e.g. 20.33"
             required
           />
          
