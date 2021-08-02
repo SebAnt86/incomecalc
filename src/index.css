@@ -5,16 +5,12 @@
 body {
     background-color: rgba(142, 154, 208, 0.481);
     font-family: sans-serif;
-    margin: 0;
-    
-    
+    margin: 0;    
 }
 
 .page_design {
     height: 100vh;
     display: grid;
-    justify-content: center;
-
     grid-template-columns:repeat(2, minmax(40%,670px));
     grid-template-rows: 0.2fr 1fr 0.2fr;
     grid-template-areas: "header header"
@@ -24,7 +20,7 @@ body {
     }
 
 .heading {
-    grid-area: header;
+   grid-area: header;
    text-align: center;
    font-size: 3em;
    text-decoration: underline;
@@ -34,10 +30,6 @@ body {
     font-size: 2rem;
 }
 
-._table {
-    /* border: solid 2px tomato; */
-
-}
 .form, .result {
     width: clamp(350px,100%,50vw);
     background-color: rgba(31, 40, 91, 0.481);
@@ -55,9 +47,7 @@ body {
    grid-area: result;
 
 }
-
-
-    label {
+  label {
         font-size: 1rem;
         display: block;
         margin-top: 1em;
@@ -74,32 +64,18 @@ body {
 
    Button {
        margin: 2rem !important;
-       /* margin-bottom: 2rem !important; */
    }
 
 
-
- /* .result , .form {
-    transition: transform 0.3s;
- } */
- /* .result:hover , .form:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    transform: scale(.96);
- } */
-
 .footer {
-    
     grid-area: footer;
-    font-size: 1rem;
-    background-color: rgb(167, 140, 240);
- 
-
-}
-
-footer > p {
     text-align: center;
-    background-color: rgb(140, 240, 178);
-    width: clamp(45ch, 50%, 75ch);
+    font-size: 1rem;
+ }
+
+.footer > p {
+    margin: auto; /* this is centering the footer !! ??? */
+    width: clamp(45ch, 50%, 75ch); 
 }
 
 .validation {

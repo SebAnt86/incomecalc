@@ -6,10 +6,10 @@ import { makeStyles } from '@material-ui/core/styles';
 function Result(props) {
   const { result } = props;
   // const classes = useStyles();
-  // if (!result) {
-  //   return <div> EMPTY </div>;
-  // }
-  const finalGovPay= Number((result.maxGovPayment - result.deductions).toFixed(2));
+  if (!result) {
+    return <div> EMPTY </div>;
+  }
+
   //console.log(typeof(finalGovPay));
   return (
      <div className="result">
@@ -40,7 +40,7 @@ function Result(props) {
           <TableRow>
             <TableCell> Final Gov payment received:</TableCell>
             <TableCell align="right">
-              ${finalGovPay}</TableCell>
+              ${result.finalGovPay}</TableCell>
           </TableRow>
           <TableRow><TableCell> Total income  is:</TableCell>
             <TableCell align="right">${result.totalIncome}</TableCell>

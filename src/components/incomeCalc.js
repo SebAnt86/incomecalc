@@ -34,10 +34,10 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome
       deductions =+ ((partnerIncome-1124)* .60);
     };
   }
-  let totalIncome = (workIncomeTotal + userCategories.maxPayment - deductions);
+  const totalIncome = (workIncomeTotal + userCategories.maxPayment - deductions);
       
   let averageWage = Math.round(totalIncome/userHours);
-  
+  const finalGovPay= userCategories.maxPayment - deductions;
 
   let calculatedDisplay = {
     totalIncome : totalIncome.toFixed(2),
@@ -45,6 +45,7 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome
     deductions : deductions.toFixed(2),
     maxGovPayment: (userCategories.maxPayment),
     averageWage,
+    finalGovPay :finalGovPay.toFixed(2),
     workHours : userHours,
   };
 
