@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/incomecalc/static/css/main.fb525ce9.chunk.css",
-    "main.js": "/incomecalc/static/js/main.25336deb.chunk.js",
-    "main.js.map": "/incomecalc/static/js/main.25336deb.chunk.js.map",
+    "main.css": "/incomecalc/static/css/main.73e01b60.chunk.css",
+    "main.js": "/incomecalc/static/js/main.0bef6f49.chunk.js",
+    "main.js.map": "/incomecalc/static/js/main.0bef6f49.chunk.js.map",
     "runtime-main.js": "/incomecalc/static/js/runtime-main.123d18ab.js",
     "runtime-main.js.map": "/incomecalc/static/js/runtime-main.123d18ab.js.map",
-    "static/js/2.76842efd.chunk.js": "/incomecalc/static/js/2.76842efd.chunk.js",
-    "static/js/2.76842efd.chunk.js.map": "/incomecalc/static/js/2.76842efd.chunk.js.map",
+    "static/js/2.f7f57d89.chunk.js": "/incomecalc/static/js/2.f7f57d89.chunk.js",
+    "static/js/2.f7f57d89.chunk.js.map": "/incomecalc/static/js/2.f7f57d89.chunk.js.map",
     "index.html": "/incomecalc/index.html",
-    "static/css/main.fb525ce9.chunk.css.map": "/incomecalc/static/css/main.fb525ce9.chunk.css.map",
-    "static/js/2.76842efd.chunk.js.LICENSE.txt": "/incomecalc/static/js/2.76842efd.chunk.js.LICENSE.txt"
+    "static/css/main.73e01b60.chunk.css.map": "/incomecalc/static/css/main.73e01b60.chunk.css.map",
+    "static/js/2.f7f57d89.chunk.js.LICENSE.txt": "/incomecalc/static/js/2.f7f57d89.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.123d18ab.js",
-    "static/js/2.76842efd.chunk.js",
-    "static/css/main.fb525ce9.chunk.css",
-    "static/js/main.25336deb.chunk.js"
+    "static/js/2.f7f57d89.chunk.js",
+    "static/css/main.73e01b60.chunk.css",
+    "static/js/main.0bef6f49.chunk.js"
   ]
 }
