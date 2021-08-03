@@ -8,7 +8,7 @@ function App() {
     const [result, setResult] = useState({});
     return (
         <div className="page_design" >
-              <h1 className="heading"> INCOME CALC </h1>
+              <h1 className="heading"> INCOME CALCULATOR </h1>
               <Form setResult={setResult} />
             <Result result={result} />
             <Footer />

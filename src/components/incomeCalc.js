@@ -51,7 +51,7 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome
   let averageWage = Math.round(totalIncome/userHours);
   let finalGovPay= maxPayment - deductions;
 
-  //check the timePeriod and multiply the results in that case 
+  //check the timePeriod and multiply the results in the case of fortnightly or monthly
   if(timePeriod === "fortnightly"){
     totalIncome *= 2;
     workIncomeTotal *= 2;
@@ -78,6 +78,7 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome
     averageWage,
     finalGovPay :finalGovPay.toFixed(2),
     workHours : userHours,
+    timePeriod
   };
 
   return calculatedDisplay;

@@ -5,9 +5,7 @@ import { Table, TableRow ,TableCell,TableBody } from '@material-ui/core';
 
 function Result(props) {
   const { result } = props;
-  // if (!result) {
-  //   return <div> EMPTY </div>;
-  // }
+ 
 
   return (
      <div className="result">
@@ -15,7 +13,7 @@ function Result(props) {
       <Table className="_table"  aria-label="simple table">
           <TableBody>
           <TableRow>
-             <TableCell>Income from working {result.workHours} hours is :</TableCell>
+             <TableCell>{result.timePeriod.toUpperCase()} income from working {result.workHours} hours is :</TableCell>
               <TableCell align="right">
                ${result.workIncomeTotal}
               </TableCell>
