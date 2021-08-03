@@ -6,15 +6,15 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome
 //all the calculation are made weekly. At the end of the function the values are multiplied in case of different timePeriod
   let bracketOne = userCategories.bracketOne;
   let bracketTwo = userCategories.bracketTwo;
-  let incomeLimit = (userCategories.incomeLimit / 2);
-  let combinedLimit = (userCategories.combinedLimit / 2);
-  let partnerLimit = (userCategories.partnerLimit / 2);
-  let maxPayment = (userCategories.maxPayment) / 2;
+  let incomeLimit = (userCategories.incomeLimit );
+  let combinedLimit = (userCategories.combinedLimit);
+  let partnerLimit = (userCategories.partnerLimit);
+  let maxPayment = (userCategories.maxPayment);
 
-  if(timePeriod === "fortnightly"){
-    userHours /= 2;
+  if(timePeriod === "weekly"){
+    userHours *= 2;
   } else if (timePeriod === "monthly"){
-    userHours /= 4.33;
+    userHours /= 2.16;
   }
 
   // variables to be returned:
@@ -52,23 +52,24 @@ export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome
   let finalGovPay= maxPayment - deductions;
 
   //check the timePeriod and multiply the results in that case 
-  if(timePeriod === "fortnightly"){
-    totalIncome *= 2;
-    workIncomeTotal *= 2;
-    deductions *= 2;
-    maxPayment *= 2; 
-    averageWage *= 2;
-    finalGovPay *= 2;
-    userHours *= 2;
-  } else if (timePeriod === "monthly"){
-    totalIncome *= 4.33;
-    workIncomeTotal *= 4.33;
-    deductions *= 4.33;
-    maxPayment *= 4.33; 
-    averageWage *= 4.33;
-    finalGovPay *= 4.33;
-    userHours *= 4.33;
-  }
+  // if(timePeriod === "weekly"){
+  //   totalIncome *= 2;
+  //   workIncomeTotal *= 2;
+  //   deductions *= 2;
+  //   maxPayment *= 2; 
+  //   averageWage *= 2;
+  //   finalGovPay *= 2;
+  //   userHours *= 2;
+  // }
+  // if (timePeriod === "monthly"){
+  //   totalIncome *= 4.33;
+  //   workIncomeTotal *= 4.33;
+  //   deductions *= 4.33;
+  //   maxPayment *= 4.33; 
+  //   averageWage *= 4.33;
+  //   finalGovPay *= 4.33;
+  //   userHours *= 4.33;
+  // }
 
   let calculatedDisplay = {
     totalIncome : totalIncome.toFixed(2),

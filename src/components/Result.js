@@ -4,18 +4,17 @@ import { Table, TableRow ,TableCell,TableBody } from '@material-ui/core';
 
 
 function Result(props) {
+  
   const { result } = props;
-  // if (!result) {
-  //   return <div> EMPTY </div>;
-  // }
+  const monthlyHours=(result.workHours ? result.workHours.toFixed(2) : '0' );
 
   return (
      <div className="result">
-      <h2 className="_titles"> RESULT </h2>
+      <h2 className="_titles"> FORTNIGHTLY RESULTS </h2>
       <Table className="_table"  aria-label="simple table">
           <TableBody>
           <TableRow>
-             <TableCell>Income from working {result.workHours} hours is :</TableCell>
+             <TableCell>Income from working {monthlyHours} hours is :</TableCell>
               <TableCell align="right">
                ${result.workIncomeTotal}
               </TableCell>
