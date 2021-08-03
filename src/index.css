@@ -7,6 +7,7 @@ body {
     font-family: sans-serif;
     margin: 0;  
     margin-bottom:50px;  
+
 }
 
 .page_design {
@@ -18,6 +19,7 @@ body {
                          "form  result"
                          "footer footer" ;
     gap: 0px 10px;
+    justify-content: center;
     }
 
 .heading {
