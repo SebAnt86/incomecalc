@@ -13,7 +13,7 @@ function Result(props) {
       <Table className="_table"  aria-label="simple table">
           <TableBody>
           <TableRow>
-             <TableCell>{result.timePeriod.toUpperCase()} income from working {result.workHours} hours is :</TableCell>
+             <TableCell>Income from working {result.workHours} hours is :</TableCell>
               <TableCell align="right">
                ${result.workIncomeTotal}
               </TableCell>
