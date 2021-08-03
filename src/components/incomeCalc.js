@@ -1,9 +1,8 @@
-// we should do all the calculations by week, then if timePeriod changes, we mutiply
-// this function should take:, userCategories, userRate, userHours, and a default partnerIncome
+
 
 export const incomeCalc = (userRate, userHours =1, userCategories, partnerIncome =0, timePeriod) => {
 
-//all the calculation are made weekly. At the end of the function the values are multiplied in case of different timePeriod
+//all the calculation are made fortnightly. At the end of the function the values are multiplied in case of different timePeriod
   let bracketOne = userCategories.bracketOne;
   let bracketTwo = userCategories.bracketTwo;
   let incomeLimit = (userCategories.incomeLimit );
