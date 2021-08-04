@@ -7,6 +7,8 @@ import "./index.css";
 import "@fontsource/roboto";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
+//import Container from "@material-ui/core/Container";
+
 
 function App() {
   const [result, setResult] = useState({});
@@ -18,15 +20,22 @@ function App() {
         </Typography>
       </Box>
 
-      <Box display="flex" flexDirection="row" flexWrap="wrap" justifyContent="center">
-        <Box item xs={12} sm={6} mx={{sm: 5}}>
-          <Form setResult={setResult} />
+      <Box  className="main-container">
+        <Box
+          display="flex"
+          flexDirection="row"
+          flexWrap="wrap"
+          justifyContent="center"
+        >
+          <Box item xs={12} sm={6} mx={{ sm: 5 }}>
+            <Form setResult={setResult} />
+          </Box>
+          <Box mt={{ xs: 5, lg: 0 }}>
+            <Result result={result} />
+          </Box>
         </Box>
-        <Box  mt={{xs:5, lg: 0}}>
-          <Result result={result} />
-        </Box>
+        <Footer />
       </Box>
-      <Footer />
     </>
   );
 }
