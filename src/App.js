@@ -27,7 +27,7 @@ function App() {
           flexWrap="wrap"
           justifyContent="center"
         >
-          <Box item xs={12} sm={6} mx={{ sm: 3 }} my={{xs:3}}>
+          <Box xs={12} sm={6} mx={{ sm: 3 }} my={{xs:3}}>
             <Form setResult={setResult} />
           </Box>
           <Box mt={{ xs: 5, md: 0 }}>
@@ -42,11 +42,4 @@ function App() {
 
 export default App;
 
-{
-  /* <div className="page_design" >
-              <h1 className="heading"> INCOME CALCULATOR </h1>
-              <Form setResult={setResult} />
-            <Result result={result} />
-            <Footer />
-        </div> */
-}
+

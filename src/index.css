@@ -111,7 +111,8 @@ body {
 } */
 
 .validation {
-    color: rgb(49, 30, 142);
+    color: red !important;
+    font-size: 1em !important;
 }
 
 
