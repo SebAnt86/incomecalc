@@ -5,6 +5,25 @@ import { userCategories } from "./govTables.js";
 
 import Button from "@material-ui/core/Button";
 import FormGroup from "@material-ui/core/FormGroup";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from "@material-ui/core/InputLabel";
+import Box from "@material-ui/core/Box";
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    // margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 export function Form(props) {
   const { setResult } = props;
@@ -25,6 +44,8 @@ export function Form(props) {
   let userCategoryWarningBool = false;
   const partnerIncomeWarning = document.getElementById("partnerIncomeWarning");
   let partnerIncomeWarningBool = true;
+
+  const classes = useStyles();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -129,10 +150,131 @@ export function Form(props) {
 
   return (
     <>
-    <FormGroup>
+      <Container maxWidth="md">
+        <FormGroup>
+          <Box mt={{ xs: 3 }}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel id="time_period-label">Time Period</InputLabel>
+              <Select
+                labelId="time_period-label"
+                id="time_period"
+                value={timePeriod}
+                onChange={(e) => setTimePeriod(e.target.value)}
+                label="Time Period"
+              >
+                <MenuItem value={"weekly"}>Weekly</MenuItem>
+                <MenuItem value={"fortnightly"}>Fortnightly</MenuItem>
+                <MenuItem value={"monthly"}>Monthly</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
 
-    </FormGroup>
-      <div className="form">
+          <Box mt={{ xs: 3 }}>
+            <TextField
+              id="hoursWork"
+              label="Hours Worked"
+              type="number"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              placeholder="e.g. 20"
+              value={timePeriod}
+              onChange={(e) => setTimePeriod(e.target.value)}
+            />
+            <FormHelperText>Required</FormHelperText>
+          </Box>
+
+          <Box mt={{ xs: 3 }}>
+            <TextField
+              id="outlined-number"
+              label="Hourly Rate"
+              type="number"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              placeholder="e.g. 20.33"
+            />
+            <FormHelperText>Required</FormHelperText>
+          </Box>
+
+          <Box mt={{ xs: 3 }}>
+            <TextField
+              id="hiddenInput"
+              label="Partner Income"
+              type="number"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              placeholder="e.g. 800"
+              value={partnerIncome}
+              onChange={(e) => setPartnerIncome(e.target.value)}
+            />
+            {/* <FormHelperText>Required</FormHelperText> */}
+          </Box>
+
+          <Box mt={{ xs: 3 }}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel id="user-category-label">User Category</InputLabel>
+              <Select
+                labelId="user-category-label"
+                id="selectField"
+                value={userCategory}
+                onChange={(e) => {
+                  setUserCategory(e.target.value);
+                  ShowHideDiv();
+                }}
+                label="User Category"
+              >
+                <MenuItem value={0}>Single, no children</MenuItem>
+                <MenuItem value={1}>
+                  Single, NOT the principal carer of a dependent child or
+                  children
+                </MenuItem>
+                <MenuItem value={2}>
+                  Single, 60 or older, after 9 continuous months on payment
+                </MenuItem>
+                <MenuItem value={3}>
+                  Single, principal carer of a dependent child or children
+                </MenuItem>
+                <MenuItem value={4}>
+                  Single principal carer granted an exemption
+                </MenuItem>
+                <MenuItem value={5}>Partnered</MenuItem>
+                <MenuItem value={6}>Partnered, Partner with pension</MenuItem>
+              </Select>
+              <FormHelperText>Please select a category</FormHelperText>
+            </FormControl>
+          </Box>
+
+          <Box display="flex" flexDirection="row" justifyContent="center" mt={{ xs: 3 }}>
+            <Button
+              type="submit"
+              value="Submit"
+              variant="contained"
+              size="large"
+            >
+              Calculate
+            </Button>
+          </Box>
+
+          <Box display="flex" flexDirection="row" justifyContent="center" mt={{ xs: 3 }}>
+            <Button variant="contained" onClick={formReset} size="small">
+              Reset
+            </Button>
+          </Box>
+        </FormGroup>
+      </Container>
+    </>
+  );
+}
+
+export default Form;
+
+{
+  /* <div className="form">
         <form onSubmit={handleSubmit} id="userForm">
           <div>
             <h2 className="_titles"> INPUT </h2>
@@ -244,23 +386,10 @@ export function Form(props) {
             <Button type="submit" value="Submit" variant="contained">
               Calculate
             </Button>
-            <Button
-              variant="contained"
-              // onClick={()=>{setHoursWorked("");
-              //                       setHourRate("");
-              //                       setPartnerIncome("");
-              //                       setUserCategory("");
-              //                       setTimePeriod("");}}>Reset</Button>
-
-              onClick={formReset}
-            >
+            <Button variant="contained" onClick={formReset}>
               Reset
             </Button>
           </div>
         </form>
-      </div>
-    </>
-  );
+      </div> */
 }
-
-export default Form;

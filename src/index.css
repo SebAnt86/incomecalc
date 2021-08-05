@@ -12,7 +12,6 @@ body {
     background-color: #11013f;
     color: #f0f8ff;
     margin-top:calc(5% + 60px);
-    bottom: 0;
 }
 
 .disclosure{
@@ -26,6 +25,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+
 
 /* .page_design {
     height: 100vh;
@@ -57,7 +58,7 @@ body {
     font-size: 2rem;
 }
 
-.form, .result {
+ .result {
     width: clamp(350px,100%,50vw);
     background-color: rgba(31, 40, 91, 0.481);
     grid-area:form ;
@@ -74,13 +75,9 @@ body {
    grid-area: result;
 
 }
-  label {
-        font-size: 1rem;
-        display: block;
-        margin-top: 1em;
-    }
+  
     
-    input, select {
+    /* input, select {
     width: clamp(5em,50%,15em);
     height: 2rem;
     border: 1px solid lightgray;
@@ -91,7 +88,7 @@ body {
 
    Button {
        margin: 2rem !important;
-   }
+   } */
 
 
 /* .footer {
