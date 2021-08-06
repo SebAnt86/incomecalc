@@ -5,27 +5,17 @@ import { Table, TableRow, TableCell, TableBody } from "@material-ui/core";
 function Result(props) {
   const { result } = props;
   const workIncomeTotal = result.workIncomeTotal ? result.workIncomeTotal : 0;
+  let  workedHours = result.workHours ? result.workHours : 0;
   const maxGovPayment = result.maxGovPayment ? result.maxGovPayment : 0;
   const deductions = result.deductions ? result.deductions : 0;
   const finalGovPay = result.finalGovPay ? result.finalGovPay : 0;
   const totalIncome = result.totalIncome ? result.totalIncome : 0;
 
-  const workedHours = () => {
+ 
     if (result.timePeriod === "monthly") {
-      if (result.workHours) {
-        let workHoursStr = result.workHours.toString();
-        return workHoursStr.toFixed(2);
-      } else {
-        return 0;
-      }
-    } else {
-      if (result.workHours) {
-        return result.workHours;
-      } else {
-        return 0;
-      }
+      workedHours = workedHours.toFixed(2);
     }
-  };
+
 
   return (
     <div className="result">
