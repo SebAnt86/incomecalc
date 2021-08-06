@@ -18,7 +18,8 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 const useStyles = makeStyles((theme) => ({
   formControl: {
     // margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 300,
+    maxWidth: "auto",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -124,7 +125,6 @@ export function Form(props) {
   };
 
   // function to handle the category
-
   const handleChangeCategory = (e) => {
     setUserCategory(e.target.value);
 
@@ -140,7 +140,7 @@ export function Form(props) {
     <>
       <Container maxWidth="md">
         <form onSubmit={handleSubmit}>
-          <FormGroup>
+          <FormGroup mx={{xs: 3}}>
             <Box mt={{ xs: 3 }}>
               <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel id="time_period-label">Time Period</InputLabel>
@@ -171,6 +171,7 @@ export function Form(props) {
                 value={hoursWorked}
                 onChange={(e) => setHoursWorked(e.target.value)}
                 required
+                className={classes.formControl}
               />
               <FormHelperText>Required</FormHelperText>
               <Box component="p" display={hoursValid} mt={{ xs: -1 }}>
@@ -192,6 +193,7 @@ export function Form(props) {
                 value={hourRate}
                 onChange={(e) => setHourRate(e.target.value)}
                 required
+                className={classes.formControl}
               />
               <FormHelperText>Required</FormHelperText>
               <Box component="p" display={rateValid} mt={{ xs: -1 }}>
@@ -212,6 +214,7 @@ export function Form(props) {
                 placeholder="e.g. 800"
                 value={partnerIncome}
                 onChange={(e) => setPartnerIncome(e.target.value)}
+                className={classes.formControl}
               />
               <FormHelperText>Required</FormHelperText>
               <Box component="p" display={partnerValid} mt={{ xs: -1 }}>
