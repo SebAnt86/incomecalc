@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/incomecalc/static/css/main.73e01b60.chunk.css",
-    "main.js": "/incomecalc/static/js/main.0bef6f49.chunk.js",
-    "main.js.map": "/incomecalc/static/js/main.0bef6f49.chunk.js.map",
+    "main.css": "/incomecalc/static/css/main.06fc80ce.chunk.css",
+    "main.js": "/incomecalc/static/js/main.ce358558.chunk.js",
+    "main.js.map": "/incomecalc/static/js/main.ce358558.chunk.js.map",
     "runtime-main.js": "/incomecalc/static/js/runtime-main.123d18ab.js",
     "runtime-main.js.map": "/incomecalc/static/js/runtime-main.123d18ab.js.map",
-    "static/js/2.f7f57d89.chunk.js": "/incomecalc/static/js/2.f7f57d89.chunk.js",
-    "static/js/2.f7f57d89.chunk.js.map": "/incomecalc/static/js/2.f7f57d89.chunk.js.map",
+    "static/css/2.24ad6327.chunk.css": "/incomecalc/static/css/2.24ad6327.chunk.css",
+    "static/js/2.7399d3ce.chunk.js": "/incomecalc/static/js/2.7399d3ce.chunk.js",
+    "static/js/2.7399d3ce.chunk.js.map": "/incomecalc/static/js/2.7399d3ce.chunk.js.map",
     "index.html": "/incomecalc/index.html",
-    "static/css/main.73e01b60.chunk.css.map": "/incomecalc/static/css/main.73e01b60.chunk.css.map",
-    "static/js/2.f7f57d89.chunk.js.LICENSE.txt": "/incomecalc/static/js/2.f7f57d89.chunk.js.LICENSE.txt"
+    "static/css/2.24ad6327.chunk.css.map": "/incomecalc/static/css/2.24ad6327.chunk.css.map",
+    "static/css/main.06fc80ce.chunk.css.map": "/incomecalc/static/css/main.06fc80ce.chunk.css.map",
+    "static/js/2.7399d3ce.chunk.js.LICENSE.txt": "/incomecalc/static/js/2.7399d3ce.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/incomecalc/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.123d18ab.js",
-    "static/js/2.f7f57d89.chunk.js",
-    "static/css/main.73e01b60.chunk.css",
-    "static/js/main.0bef6f49.chunk.js"
+    "static/css/2.24ad6327.chunk.css",
+    "static/js/2.7399d3ce.chunk.js",
+    "static/css/main.06fc80ce.chunk.css",
+    "static/js/main.ce358558.chunk.js"
   ]
 }
