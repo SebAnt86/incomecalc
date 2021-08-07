@@ -20,17 +20,18 @@ function App() {
         </Typography>
       </Box>
 
-      <Box  className="main-container">
-        <Box
+      <Box className="main-container">
+        <Box className="centerbox"
           display="flex"
           flexDirection="row"
           flexWrap="wrap"
           justifyContent="center"
+          alignItems="start"
         >
-          <Box xs={12} sm={6} mx={{ sm: 3 }} my={{xs:3}}>
+          <Box xs={12} sm={6} mx={{ sm: 3 }} my={{xs:3}} className="formbox">
             <Form setResult={setResult} />
           </Box>
-          <Box mt={{ xs: 5, md: 0 }}>
+          <Box xs={12} sm={6} mx={{ sm: 3 }} my={{xs:3}} className="resultbox">
             <Result result={result} />
           </Box>
         </Box>

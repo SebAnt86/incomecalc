@@ -18,8 +18,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 const useStyles = makeStyles((theme) => ({
   formControl: {
     // margin: theme.spacing(1),
-    minWidth: 300,
-    maxWidth: "auto",
+    width: 300,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -277,7 +276,7 @@ export function Form(props) {
               justifyContent="center"
               mt={{ xs: 3 }}
             >
-              <Button variant="contained" onClick={formReset} size="small">
+              <Button variant="contained" color="secondary" onClick={formReset} size="small">
                 Reset
               </Button>
             </Box>
