@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     // margin: theme.spacing(1),
     minWidth: 300,
-    maxWidth: "auto",
+    maxWidth: 300,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -138,7 +138,7 @@ export function Form(props) {
 
   return (
     <>
-      <Container maxWidth="md">
+      <Container maxWidth="md" className="form-container">
         <form onSubmit={handleSubmit}>
           <FormGroup mx={{xs: 3}}>
             <Box mt={{ xs: 3 }}>
@@ -275,7 +275,7 @@ export function Form(props) {
               display="flex"
               flexDirection="row"
               justifyContent="center"
-              mt={{ xs: 3 }}
+              my={{ xs: 3 }}
             >
               <Button variant="contained" onClick={formReset} size="small">
                 Reset

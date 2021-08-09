@@ -4,11 +4,12 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
+// import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 // import { makeStyles } from '@material-ui/core/styles';
 
 function Result(props) {
@@ -26,45 +27,44 @@ function Result(props) {
 
   return (
     <>
-      <TableContainer component={Paper} maxWidth="md">
-        <Table aria-label="customized table">
-          <TableHead className="table-head">
-            <TableRow align="center">FORTNIGHTLY INCOME</TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>
-                Income from working {workedHours} hours is:
-              </TableCell>
-              <TableCell align="right">${workIncomeTotal}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-              The goverment payment max you could receive was:
-              </TableCell>
-              <TableCell align="right">${maxGovPayment}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-              Gov payment deducted by:
-              </TableCell>
-              <TableCell align="right">${deductions}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-              Final Gov payment received:
-              </TableCell>
-              <TableCell align="right">${finalGovPay}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-              Total income is:
-              </TableCell>
-              <TableCell>${totalIncome}</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <Container maxWidth="md">
+        <TableContainer component={Paper} maxWidth="md">
+        <Typography variant="h6" className="table-head">FORTNIGHTLY RESULTS</Typography>
+          <Table aria-label="customized table" >
+            {/* <TableHead className="table-head" mt={{ xs: 3 }}>
+              <TableRow align="center">FORTNIGHTLY INCOME</TableRow>
+            </TableHead> */}
+            <TableBody>
+              <TableRow>
+                <TableCell>
+                  Income from working <Box component="span" fontWeight="fontWeightBold" >{workedHours}</Box> hours is:
+                </TableCell>
+                <TableCell align="right"><Box component="span" fontWeight="fontWeightBold" >${workIncomeTotal}</Box></TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>
+                  The goverment max payment you could receive was:
+                </TableCell>
+                <TableCell align="right"><Box component="span" fontWeight="fontWeightBold">${maxGovPayment}</Box></TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>
+                  The goverment payment has been deducted by:
+                </TableCell>
+                <TableCell align="right"><Box component="span" fontWeight="fontWeightBold" >${deductions}</Box></TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Final goverment payment received:</TableCell>
+                <TableCell align="right"><Box component="span" fontWeight="fontWeightBold" >${finalGovPay}</Box></TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell><Box component="span" fontWeight="fontWeightBold" fontSize={18}>You total fortnightly income is:</Box></TableCell>
+                <TableCell><Box component="span" fontWeight="fontWeightBold" fontSize={18}>${totalIncome}</Box></TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Container>
     </>
   );
 }
