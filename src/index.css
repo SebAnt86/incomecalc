@@ -44,8 +44,8 @@ body {
     padding: 0.7em 0;
 }
 
-TableContainer{
-    border: 1px solid #11013f;
+.table-style {
+    font-size: 0.95em !important;
 }
 
 /* footer style */

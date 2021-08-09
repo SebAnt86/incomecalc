@@ -30,32 +30,29 @@ function Result(props) {
       <Container maxWidth="md">
         <TableContainer component={Paper} maxWidth="md">
         <Typography variant="h6" className="table-head">FORTNIGHTLY RESULTS</Typography>
-          <Table aria-label="customized table" >
-            {/* <TableHead className="table-head" mt={{ xs: 3 }}>
-              <TableRow align="center">FORTNIGHTLY INCOME</TableRow>
-            </TableHead> */}
+          <Table aria-label="customized table">
             <TableBody>
               <TableRow>
-                <TableCell>
+                <TableCell className="table-style">
                   Income from working <Box component="span" fontWeight="fontWeightBold" >{workedHours}</Box> hours is:
                 </TableCell>
-                <TableCell align="right"><Box component="span" fontWeight="fontWeightBold" >${workIncomeTotal}</Box></TableCell>
+                <TableCell className="table-style" align="right"><Box component="span" fontWeight="fontWeightBold" >${workIncomeTotal}</Box></TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>
+                <TableCell className="table-style">
                   The goverment max payment you could receive was:
                 </TableCell>
-                <TableCell align="right"><Box component="span" fontWeight="fontWeightBold">${maxGovPayment}</Box></TableCell>
+                <TableCell className="table-style" align="right"><Box component="span" fontWeight="fontWeightBold">${maxGovPayment}</Box></TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>
+                <TableCell className="table-style" >
                   The goverment payment has been deducted by:
                 </TableCell>
-                <TableCell align="right"><Box component="span" fontWeight="fontWeightBold" >${deductions}</Box></TableCell>
+                <TableCell className="table-style" align="right"><Box component="span" fontWeight="fontWeightBold" >${deductions}</Box></TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Final goverment payment received:</TableCell>
-                <TableCell align="right"><Box component="span" fontWeight="fontWeightBold" >${finalGovPay}</Box></TableCell>
+                <TableCell className="table-style" >Final goverment payment received:</TableCell>
+                <TableCell className="table-style" align="right"><Box component="span" fontWeight="fontWeightBold" >${finalGovPay}</Box></TableCell>
               </TableRow>
               <TableRow>
                 <TableCell><Box component="span" fontWeight="fontWeightBold" fontSize={18}>You total fortnightly income is:</Box></TableCell>
