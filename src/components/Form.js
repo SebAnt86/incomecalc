@@ -277,7 +277,7 @@ export function Form(props) {
               justifyContent="center"
               my={{ xs: 3 }}
             >
-              <Button variant="contained" onClick={formReset} size="small">
+              <Button variant="contained" color="secondary" onClick={formReset} size="small">
                 Reset
               </Button>
             </Box>

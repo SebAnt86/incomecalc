@@ -6,14 +6,23 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 // import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import { makeStyles } from '@material-ui/core/styles';
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 // import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles({
+  table: {
+    minWidth: 300,
+    minHeight: 400, 
+  },
+});
+
 function Result(props) {
   const { result } = props;
+  const classes = useStyles();
   const workIncomeTotal = result.workIncomeTotal ? result.workIncomeTotal : 0;
   let workedHours = result.workHours ? result.workHours : 0;
   const maxGovPayment = result.maxGovPayment ? result.maxGovPayment : 0;
@@ -24,7 +33,7 @@ function Result(props) {
   if (result.timePeriod === "monthly") {
     workedHours = workedHours.toFixed(2);
   }
-
+  
   return (
     <>
       <Container maxWidth="md">
