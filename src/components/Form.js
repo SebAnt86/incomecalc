@@ -21,6 +21,26 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 300,
     maxWidth: 300,
   },
+
+  cssLabel: {
+    color: "black",
+  },
+
+  cssOutlinedInput: {
+    "&$cssFocused $notchedOutline": {
+      borderColor: `black !important`,
+    },
+  },
+
+  cssFocused: {
+    color: "black !important",
+  },
+
+  notchedOutline: {
+    borderWidth: "1px",
+    borderColor: "black !important",
+  },
+
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
@@ -53,7 +73,7 @@ export function Form(props) {
 
     // validation for the hours worked input
     if (hoursWorked < 1) {
-        console.log(hoursWorked)
+      console.log(hoursWorked);
       setHoursValid("block");
       hoursWorkBool = false;
     } else {
@@ -140,7 +160,7 @@ export function Form(props) {
     <>
       <Container maxWidth="md" className="form-container">
         <form onSubmit={handleSubmit}>
-          <FormGroup mx={{xs: 3}}>
+          <FormGroup mx={{ xs: 3 }}>
             <Box mt={{ xs: 3 }}>
               <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel id="time_period-label">Time Period</InputLabel>
@@ -165,6 +185,18 @@ export function Form(props) {
                 type="number"
                 InputLabelProps={{
                   shrink: true,
+                  classes: {
+                    root: classes.cssLabel,
+                    focused: classes.cssFocused,
+                  },
+                }}
+                InputProps={{
+                  classes: {
+                    root: classes.cssOutlinedInput,
+                    focused: classes.cssFocused,
+                    notchedOutline: classes.notchedOutline,
+                  },
+                  inputMode: "numeric",
                 }}
                 variant="outlined"
                 placeholder="e.g. 20"
@@ -186,8 +218,20 @@ export function Form(props) {
                 label="Hourly Rate"
                 type="number"
                 InputLabelProps={{
-                  shrink: true,
-                }}
+                    shrink: true,
+                    classes: {
+                      root: classes.cssLabel,
+                      focused: classes.cssFocused,
+                    },
+                  }}
+                  InputProps={{
+                    classes: {
+                      root: classes.cssOutlinedInput,
+                      focused: classes.cssFocused,
+                      notchedOutline: classes.notchedOutline,
+                    },
+                    inputMode: "numeric",
+                  }}
                 variant="outlined"
                 placeholder="e.g. 20.33"
                 value={hourRate}
@@ -208,8 +252,20 @@ export function Form(props) {
                 label="Partner Income"
                 type="number"
                 InputLabelProps={{
-                  shrink: true,
-                }}
+                    shrink: true,
+                    classes: {
+                      root: classes.cssLabel,
+                      focused: classes.cssFocused,
+                    },
+                  }}
+                  InputProps={{
+                    classes: {
+                      root: classes.cssOutlinedInput,
+                      focused: classes.cssFocused,
+                      notchedOutline: classes.notchedOutline,
+                    },
+                    inputMode: "numeric",
+                  }}
                 variant="outlined"
                 placeholder="e.g. 800"
                 value={partnerIncome}
@@ -277,7 +333,12 @@ export function Form(props) {
               justifyContent="center"
               my={{ xs: 3 }}
             >
-              <Button variant="contained" color="secondary" onClick={formReset} size="small">
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={formReset}
+                size="small"
+              >
                 Reset
               </Button>
             </Box>

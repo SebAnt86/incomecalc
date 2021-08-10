@@ -46,6 +46,13 @@ Button:hover {
     color: #11013f !important;
 }
 
+
+/* label:hover,
+label:active,
+label:focus
+ {
+    color: black !important;
+} */
 /* results style */
 
 .table-head {
