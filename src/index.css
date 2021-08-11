@@ -47,12 +47,12 @@ Button:hover {
 }
 
 
-/* label:hover,
-label:active,
-label:focus
- {
-    color: black !important;
-} */
+
+label {
+    color: #000000 !important;
+}
+
+
 /* results style */
 
 .table-head {

@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     // margin: theme.spacing(1),
     minWidth: 300,
     maxWidth: 300,
+    '& .MuiOutlinedInput-notchedOutline': {
+        borderColor: 'black'
+    }
   },
 
   cssLabel: {
@@ -40,6 +43,12 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: "1px",
     borderColor: "black !important",
   },
+
+//   selectBorder: {
+//     '& .MuiOutlinedInput-notchedOutline': {
+//         borderColor: 'black'
+//     }
+//   },
 
   selectEmpty: {
     marginTop: theme.spacing(2),
