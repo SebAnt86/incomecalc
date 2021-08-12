@@ -20,11 +20,15 @@ const useStyles = makeStyles((theme) => ({
     // margin: theme.spacing(1),
     minWidth: 300,
     maxWidth: 300,
+    // change Select color to black in the next 4 lines
     '& .MuiOutlinedInput-notchedOutline': {
         borderColor: 'black'
-    }
+    },
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        borderColor: "black"
+      },
   },
-
+// cange the TextField color to black in the next lines
   cssLabel: {
     color: "black",
   },
