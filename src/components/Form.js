@@ -81,7 +81,6 @@ export function Form(props) {
 
     // validation for the hours worked input
     if (hoursWorked < 1) {
-      console.log(hoursWorked);
       setHoursValid("block");
       hoursWorkBool = false;
     } else {
