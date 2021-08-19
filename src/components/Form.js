@@ -14,7 +14,6 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Box from "@material-ui/core/Box";
 import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
-import InputAdornment from '@material-ui/core/InputAdornment';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
