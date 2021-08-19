@@ -16,7 +16,12 @@ function App() {
     <>
       <Box display="flex" justifyContent="center">
         <Typography variant="h4" gutterBottom className="heading">
-          CENTERLINK INCOME CALCULATOR
+          JOBSEEKER PAYMENT CALCULATOR
+        </Typography>
+      </Box>
+      <Box display="flex" justifyContent="center">
+        <Typography variant="p" gutterBottom className="heading">
+          How much JobSeeker payment should you get? 
         </Typography>
       </Box>
 

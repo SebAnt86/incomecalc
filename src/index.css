@@ -11,6 +11,8 @@ body {
 .heading {
     padding-top: 1em;
     text-align: center;
+    /* font-size: 5rem !important; */
+    color: #11013f;
  }
 
 .main-container{
@@ -42,8 +44,7 @@ Button{
 }
 
 Button:hover {
-    background-color: #f0f8ff !important;
-    color: #11013f !important;
+    background-color: #11013fc2 !important;
 }
 
 

@@ -17,7 +17,7 @@ function Footer() {
             information provided on this website.
           </Box>
           <Box textAlign="center" pb={3}>
-             Centerlink Income Calculator &reg; {new Date().getFullYear()}
+             JobSeeker Income Calculator &reg; {new Date().getFullYear()}
           </Box>
         </Container>
       </Box>
