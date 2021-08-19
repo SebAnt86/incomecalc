@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/incomecalc/static/css/main.01c09759.chunk.css",
-    "main.js": "/incomecalc/static/js/main.a6ea3892.chunk.js",
-    "main.js.map": "/incomecalc/static/js/main.a6ea3892.chunk.js.map",
+    "main.css": "/incomecalc/static/css/main.a1719030.chunk.css",
+    "main.js": "/incomecalc/static/js/main.025edddf.chunk.js",
+    "main.js.map": "/incomecalc/static/js/main.025edddf.chunk.js.map",
     "runtime-main.js": "/incomecalc/static/js/runtime-main.123d18ab.js",
     "runtime-main.js.map": "/incomecalc/static/js/runtime-main.123d18ab.js.map",
     "static/css/2.24ad6327.chunk.css": "/incomecalc/static/css/2.24ad6327.chunk.css",
-    "static/js/2.2615e6f1.chunk.js": "/incomecalc/static/js/2.2615e6f1.chunk.js",
-    "static/js/2.2615e6f1.chunk.js.map": "/incomecalc/static/js/2.2615e6f1.chunk.js.map",
+    "static/js/2.4d527359.chunk.js": "/incomecalc/static/js/2.4d527359.chunk.js",
+    "static/js/2.4d527359.chunk.js.map": "/incomecalc/static/js/2.4d527359.chunk.js.map",
     "index.html": "/incomecalc/index.html",
     "static/css/2.24ad6327.chunk.css.map": "/incomecalc/static/css/2.24ad6327.chunk.css.map",
-    "static/css/main.01c09759.chunk.css.map": "/incomecalc/static/css/main.01c09759.chunk.css.map",
-    "static/js/2.2615e6f1.chunk.js.LICENSE.txt": "/incomecalc/static/js/2.2615e6f1.chunk.js.LICENSE.txt",
+    "static/css/main.a1719030.chunk.css.map": "/incomecalc/static/css/main.a1719030.chunk.css.map",
+    "static/js/2.4d527359.chunk.js.LICENSE.txt": "/incomecalc/static/js/2.4d527359.chunk.js.LICENSE.txt",
     "static/media/index.css": "/incomecalc/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.123d18ab.js",
     "static/css/2.24ad6327.chunk.css",
-    "static/js/2.2615e6f1.chunk.js",
-    "static/css/main.01c09759.chunk.css",
-    "static/js/main.a6ea3892.chunk.js"
+    "static/js/2.4d527359.chunk.js",
+    "static/css/main.a1719030.chunk.css",
+    "static/js/main.025edddf.chunk.js"
   ]
 }
